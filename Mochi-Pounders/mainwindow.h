@@ -15,6 +15,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_HammerButton_Red_clicked();
+
+    void on_HammerButton_Blue_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
