@@ -7,6 +7,8 @@
 #include <QPainter>
 #include <QBrush>
 
+#include "pausewindow.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui{ class MainWindow;}
 QT_END_NAMESPACE
@@ -32,8 +34,11 @@ private slots:
 
     void setColorState(int state);
 
+    void on_PauseButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    pausewindow *pauseWindow;
     int state{};
 };
 

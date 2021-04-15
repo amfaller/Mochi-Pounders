@@ -29,6 +29,7 @@ public:
     QLCDNumber *ScoreCounter_Red;
     QLCDNumber *ScoreCounter_Blue;
     QLCDNumber *TimeCounter;
+    QPushButton *PauseButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -54,6 +55,9 @@ public:
         TimeCounter = new QLCDNumber(centralwidget);
         TimeCounter->setObjectName(QString::fromUtf8("TimeCounter"));
         TimeCounter->setGeometry(QRect(210, 0, 71, 81));
+        PauseButton = new QPushButton(centralwidget);
+        PauseButton->setObjectName(QString::fromUtf8("PauseButton"));
+        PauseButton->setGeometry(QRect(200, 210, 75, 23));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -73,6 +77,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         HammerButton_Red->setText(QCoreApplication::translate("MainWindow", "Red", nullptr));
         HammerButton_Blue->setText(QCoreApplication::translate("MainWindow", "Blue", nullptr));
+        PauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
     } // retranslateUi
 
 };

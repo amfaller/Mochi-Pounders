@@ -165,3 +165,13 @@ void MainWindow::setColorState(int state)
     this->state = state;
     update();
 }
+
+void MainWindow::on_PauseButton_clicked()
+{
+    // Hide the gameplay window
+    hide();
+
+    // Show the pause window
+    pauseWindow = new pausewindow(this);
+    pauseWindow->show();
+}
