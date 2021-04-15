@@ -110,6 +110,7 @@ void MainWindow::update_time()
     }
     // End of game condition
     else{
+        isPaused = true;
         ui->TimeCounter->display(0);
         MainWindow::setColorState(-1);
 
@@ -165,7 +166,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
         painter.setBrush(Qt::green);
         currColor = COLOR_GREEN;
     }
-    else
+    else                // 6 7 or 8
     {
         painter.setPen(QPen(Qt::black));
         painter.setBrush(Qt::black);
