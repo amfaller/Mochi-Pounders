@@ -12,3 +12,12 @@ pausewindow::~pausewindow()
 {
     delete ui;
 }
+
+void pausewindow::on_button_resume_clicked()
+{
+    // Hide the pause window
+    hide();
+
+//    // Show the gameplay window
+//    MainWindow::
+}

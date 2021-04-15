@@ -38,8 +38,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    pausewindow *pauseWindow;
-    int state{};
+//    pausewindow *pauseWindow;
+    int state{};    // State for the mole
 };
 
 

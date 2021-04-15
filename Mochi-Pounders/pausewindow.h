@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "mainwindow.h"
+
 namespace Ui {
 class pausewindow;
 }
@@ -14,6 +16,9 @@ class pausewindow : public QDialog
 public:
     explicit pausewindow(QWidget *parent = nullptr);
     ~pausewindow();
+
+private slots:
+    void on_button_resume_clicked();
 
 private:
     Ui::pausewindow *ui;
