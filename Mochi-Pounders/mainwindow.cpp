@@ -1,11 +1,22 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+/* enum for mole color */
+typedef enum {
+    COLOR_RED,
+    COLOR_BLUE,
+    COLOR_GREEN,
+    COLOR_BLACK
+} color_e;
+
 /***** Global Variables *****/
 int redScore;
 int blueScore;
 int tick = 1000;
 int currTimeS = 60;
+
+bool moleNotClicked = true;     // Flag to prevent button mashing
+color_e currColor;              // Current mole color
 
 QRect mole(215,128,50,50);
 
@@ -39,14 +50,15 @@ void MainWindow::on_HammerButton_Red_clicked()
 
     /* Insert an if/else block here to check mole color */
 
-    // if(mole color == red)
-    ui->ScoreCounter_Red->display(++redScore);
-
-    // else if(mole color == blue)
-    // increment blueScore
-
-    // else if (mole color == pink)
-    //  decrement redScore
+    if(currColor == COLOR_RED){
+        ui->ScoreCounter_Red->display(++redScore);
+    }
+    else if(currColor == COLOR_BLUE){
+        ui->ScoreCounter_Blue->display(++blueScore);
+    }
+    else if(currColor == COLOR_GREEN){
+        ui->ScoreCounter_Red->display(--redScore);
+    }
 }
 
 
@@ -59,7 +71,15 @@ void MainWindow::on_HammerButton_Blue_clicked()
     blueScore = ui->ScoreCounter_Blue->intValue();
 
     /* Same checks as in red click handler */
-    ui->ScoreCounter_Blue->display(++blueScore);
+    if(currColor == COLOR_BLUE){
+        ui->ScoreCounter_Blue->display(++blueScore);
+    }
+    else if(currColor == COLOR_RED){
+        ui->ScoreCounter_Red->display(++redScore);
+    }
+    else if(currColor == COLOR_GREEN){
+        ui->ScoreCounter_Red->display(--blueScore);
+    }
 }
 
 
@@ -73,13 +93,14 @@ void MainWindow::update_time()
         // Update timer
         ui->TimeCounter->display(currTimeS--);
 
-        // Update Mole
+        // Update Mole      TODO: Make this random
         MainWindow::setColorState(currTimeS);
     }
     // End of game condition
     else{
         ui->TimeCounter->display(0);
-        MainWindow::paintEvent(NULL);
+        MainWindow::setColorState(-1);
+//        MainWindow::paintEvent(NULL);
     }
 }
 
@@ -107,21 +128,25 @@ void MainWindow::paintEvent(QPaintEvent *event)
     {
         painter.setPen(QPen(Qt::blue));
         painter.setBrush(Qt::blue);
+        currColor = COLOR_BLUE;
     }
     else if(state % 5 == 0)
     {
         painter.setPen(QPen(Qt::red));
         painter.setBrush(Qt::red);
+        currColor = COLOR_RED;
     }
     else if(state % 7 == 0)
     {
         painter.setPen(QPen(Qt::green));
         painter.setBrush(Qt::green);
+        currColor = COLOR_GREEN;
     }
     else
     {
         painter.setPen(QPen(Qt::black));
         painter.setBrush(Qt::black);
+        currColor = COLOR_BLACK;
     }
 
     painter.drawRect(mole);
