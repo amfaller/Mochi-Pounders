@@ -28,6 +28,7 @@ public:
     QPushButton *HammerButton_Blue;
     QLCDNumber *ScoreCounter_Red;
     QLCDNumber *ScoreCounter_Blue;
+    QLCDNumber *TimeCounter;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -50,6 +51,9 @@ public:
         ScoreCounter_Blue = new QLCDNumber(centralwidget);
         ScoreCounter_Blue->setObjectName(QString::fromUtf8("ScoreCounter_Blue"));
         ScoreCounter_Blue->setGeometry(QRect(730, 0, 71, 81));
+        TimeCounter = new QLCDNumber(centralwidget);
+        TimeCounter->setObjectName(QString::fromUtf8("TimeCounter"));
+        TimeCounter->setGeometry(QRect(370, 0, 71, 81));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

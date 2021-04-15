@@ -60,6 +60,16 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLCDNumber" name="TimeCounter">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>0</y>
+      <width>71</width>
+      <height>81</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

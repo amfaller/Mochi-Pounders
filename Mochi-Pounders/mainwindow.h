@@ -20,6 +20,8 @@ private slots:
 
     void on_HammerButton_Blue_clicked();
 
+    void update_time();
+
 private:
     Ui::MainWindow *ui;
 };
