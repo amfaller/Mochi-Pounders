@@ -74,25 +74,7 @@ void MainWindow::update_time()
         ui->TimeCounter->display(currTimeS--);
 
         // Update Mole
-        QPainter painter(this);
-
-        painter.eraseRect(mole);
-        painter.drawRect(mole);
-
-        // Change mole color    TODO: Figure out how to do this, make this random
-        if(currTimeS % 3 == 0){
-            painter.fillRect(mole,Qt::blue);
-        }
-        else if(currTimeS % 5 == 0){
-            painter.fillRect(mole,Qt::red);
-        }
-        else if(currTimeS % 7 == 0){
-            painter.fillRect(mole, Qt::green);
-        }
-        else{
-            painter.fillRect(mole,Qt::black);
-        }
-        update();
+        MainWindow::setColorState(currTimeS);
     }
     // End of game condition
     else{
@@ -106,6 +88,7 @@ void MainWindow::update_time()
 void MainWindow::paintEvent(QPaintEvent *event)
 {
 
+    Q_UNUSED(event)
     QPainter painter(this);
 
     /*  The commented code below alters the border color of the rectangle.
@@ -118,9 +101,35 @@ void MainWindow::paintEvent(QPaintEvent *event)
     painter.setPen(pen);
     */
 
+    if(state % 3 == 0)
+    {
+        painter.setPen(QPen(Qt::blue));
+        painter.setBrush(Qt::blue);
+    }
+    else if(state % 5 == 0)
+    {
+        painter.setPen(QPen(Qt::red));
+        painter.setBrush(Qt::red);
+    }
+    else if(state % 7 == 0)
+    {
+        painter.setPen(QPen(Qt::green));
+        painter.setBrush(Qt::green);
+    }
+    else
+    {
+        painter.setPen(QPen(Qt::black));
+        painter.setBrush(Qt::black);
+    }
+
     painter.drawRect(mole);
 
     // Set initial mole color
-    painter.fillRect(mole,Qt::black);
+//    painter.fillRect(mole,Qt::black);
 }
 
+void MainWindow::setColorState(int state)
+{
+    this->state = state;
+    update();
+}

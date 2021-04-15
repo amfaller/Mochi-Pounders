@@ -8,7 +8,7 @@
 #include <QBrush>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui{ class MainWindow;}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -30,7 +30,12 @@ private slots:
 
     void update_time();
 
+    void setColorState(int state);
+
 private:
     Ui::MainWindow *ui;
+    int state{};
 };
+
+
 #endif // MAINWINDOW_H
