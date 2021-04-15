@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>480</width>
+    <height>272</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>80</y>
+      <y>100</y>
       <width>71</width>
-      <height>481</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
@@ -30,10 +30,10 @@
    <widget class="QPushButton" name="HammerButton_Blue">
     <property name="geometry">
      <rect>
-      <x>730</x>
-      <y>80</y>
-      <width>75</width>
-      <height>481</height>
+      <x>410</x>
+      <y>100</y>
+      <width>71</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
@@ -53,7 +53,7 @@
    <widget class="QLCDNumber" name="ScoreCounter_Blue">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>410</x>
       <y>0</y>
       <width>71</width>
       <height>81</height>
@@ -63,7 +63,7 @@
    <widget class="QLCDNumber" name="TimeCounter">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>210</x>
       <y>0</y>
       <width>71</width>
       <height>81</height>
@@ -76,7 +76,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>480</width>
      <height>21</height>
     </rect>
    </property>
