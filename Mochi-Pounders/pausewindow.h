@@ -17,6 +17,9 @@ public:
     explicit pausewindow(QWidget *parent = nullptr);
     ~pausewindow();
 
+signals:
+    void go ();     // Signal from pauseWindow to MainWindow to resume timer
+
 private slots:
     void on_button_resume_clicked();
 

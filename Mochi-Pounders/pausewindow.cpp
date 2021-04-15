@@ -16,6 +16,7 @@ pausewindow::~pausewindow()
 void pausewindow::on_button_resume_clicked()
 {
     // Hide the pause window
+    emit go();
     hide();
 
 //    // Show the gameplay window

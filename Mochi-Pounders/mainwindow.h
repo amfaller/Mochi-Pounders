@@ -36,6 +36,8 @@ private slots:
 
     void on_PauseButton_clicked();
 
+    void resume();
+
 private:
     Ui::MainWindow *ui;
 //    pausewindow *pauseWindow;

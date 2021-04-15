@@ -18,7 +18,10 @@ int currTimeS = 60;
 bool moleNotClicked = true;     // Flag to prevent button mashing
 color_e currColor;              // Current mole color
 
-QRect mole(215,128,50,50);
+QRect mole(215,128,50,50);      // Rectangle defining [x y width height] of mole rectangle
+
+QTimer *gameTimer;
+bool isPaused = false;
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Window Setup //////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     // Game timer
-    QTimer *gameTimer = new QTimer(this);
+    gameTimer = new QTimer(this);
     connect(gameTimer, &QTimer::timeout, this, &MainWindow::update_time);
     gameTimer->start(tick);
 }
@@ -48,19 +51,19 @@ void MainWindow::on_HammerButton_Red_clicked()
 {
     redScore = ui->ScoreCounter_Red->intValue();
 
-    /* Insert an if/else block here to check mole color */
-
-    if(moleNotClicked && currColor == COLOR_RED){
-        moleNotClicked = false;
-        ui->ScoreCounter_Red->display(++redScore);
-    }
-    else if(moleNotClicked && currColor == COLOR_BLUE){
-        moleNotClicked = false;
-        ui->ScoreCounter_Blue->display(++blueScore);
-    }
-    else if(moleNotClicked && currColor == COLOR_GREEN){
-        moleNotClicked = false;
-        ui->ScoreCounter_Red->display(--redScore);
+    if(!isPaused){
+        if(moleNotClicked && currColor == COLOR_RED){
+            moleNotClicked = false;
+            ui->ScoreCounter_Red->display(++redScore);
+        }
+        else if(moleNotClicked && currColor == COLOR_BLUE){
+            moleNotClicked = false;
+            ui->ScoreCounter_Blue->display(++blueScore);
+        }
+        else if(moleNotClicked && currColor == COLOR_GREEN){
+            moleNotClicked = false;
+            ui->ScoreCounter_Red->display(--redScore);
+        }
     }
 }
 
@@ -73,18 +76,20 @@ void MainWindow::on_HammerButton_Blue_clicked()
 {
     blueScore = ui->ScoreCounter_Blue->intValue();
 
-    /* Same checks as in red click handler */
-    if(moleNotClicked && currColor == COLOR_BLUE){
-        moleNotClicked = false;
-        ui->ScoreCounter_Blue->display(++blueScore);
-    }
-    else if(moleNotClicked && currColor == COLOR_RED){
-        moleNotClicked = false;
-        ui->ScoreCounter_Red->display(++redScore);
-    }
-    else if(moleNotClicked && currColor == COLOR_GREEN){
-        moleNotClicked = false;
-        ui->ScoreCounter_Red->display(--blueScore);
+    if(!isPaused){
+        /* Same checks as in red click handler */
+        if(moleNotClicked && currColor == COLOR_BLUE){
+            moleNotClicked = false;
+            ui->ScoreCounter_Blue->display(++blueScore);
+        }
+        else if(moleNotClicked && currColor == COLOR_RED){
+            moleNotClicked = false;
+            ui->ScoreCounter_Red->display(++redScore);
+        }
+        else if(moleNotClicked && currColor == COLOR_GREEN){
+            moleNotClicked = false;
+            ui->ScoreCounter_Red->display(--blueScore);
+        }
     }
 }
 
@@ -107,9 +112,20 @@ void MainWindow::update_time()
     else{
         ui->TimeCounter->display(0);
         MainWindow::setColorState(-1);
-//        MainWindow::paintEvent(NULL);
+
+        // Get final scores
+        redScore = ui->ScoreCounter_Red->intValue();
+        blueScore = ui->ScoreCounter_Blue->intValue();
     }
 }
+
+/* Helper function to pause the timer */
+void pause(){
+    gameTimer->stop();
+    isPaused = true;
+}
+
+
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Mole Slots /////////////////////////////////////////////////////////////////////////////////////////
@@ -166,17 +182,32 @@ void MainWindow::setColorState(int state)
     update();
 }
 
+// ////////////////////////////////////////////////////////////////////////////////////////////////////
+// Pause Menu Transition Slots ////////////////////////////////////////////////////////////////////////
+
 void MainWindow::on_PauseButton_clicked()
 {
+    pausewindow pauseWindow;
+
+    // Pause the timer
+    pause();
+
     // Hide the gameplay window
-//    hide();
+    hide();
+
+    // Connect the pause window's go signal to the resume function in MainWindow
+    QObject::connect(&pauseWindow, SIGNAL(go()), this, SLOT(resume()));
 
     // Show the pause window
-//    pauseWindow = new pausewindow(this);
-//    pauseWindow->show();
-
-
-    pausewindow pauseWindow;
     pauseWindow.setModal(true);
     pauseWindow.exec();
 }
+
+/* Slot to resume the game */
+void MainWindow::resume(){
+    isPaused = false;
+    show();
+    gameTimer->start();
+}
+
+
