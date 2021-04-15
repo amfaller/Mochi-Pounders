@@ -21,6 +21,8 @@ public:
 
     virtual void paintEvent(QPaintEvent *event);
 
+    void update_mole(QPainter &painter);
+
 private slots:
     void on_HammerButton_Red_clicked();
 

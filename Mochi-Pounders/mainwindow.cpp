@@ -18,9 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &MainWindow::update_time);
-    timer->start(tick);
+    // Game timer
+    QTimer *gameTimer = new QTimer(this);
+    connect(gameTimer, &QTimer::timeout, this, &MainWindow::update_time);
+    gameTimer->start(tick);
 }
 
 MainWindow::~MainWindow()
@@ -69,10 +70,34 @@ void MainWindow::on_HammerButton_Blue_clicked()
 void MainWindow::update_time()
 {
     if(currTimeS > 0){
+        // Update timer
         ui->TimeCounter->display(currTimeS--);
+
+        // Update Mole
+        QPainter painter(this);
+
+        painter.eraseRect(mole);
+        painter.drawRect(mole);
+
+        // Change mole color    TODO: Figure out how to do this, make this random
+        if(currTimeS % 3 == 0){
+            painter.fillRect(mole,Qt::blue);
+        }
+        else if(currTimeS % 5 == 0){
+            painter.fillRect(mole,Qt::red);
+        }
+        else if(currTimeS % 7 == 0){
+            painter.fillRect(mole, Qt::green);
+        }
+        else{
+            painter.fillRect(mole,Qt::black);
+        }
+        update();
     }
+    // End of game condition
     else{
         ui->TimeCounter->display(0);
+        MainWindow::paintEvent(NULL);
     }
 }
 
@@ -95,5 +120,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
     painter.drawRect(mole);
 
-    painter.fillRect(mole,Qt::blue);
+    // Set initial mole color
+    painter.fillRect(mole,Qt::black);
 }
+
