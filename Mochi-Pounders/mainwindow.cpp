@@ -85,6 +85,8 @@ void MainWindow::update_time()
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Mole Slots /////////////////////////////////////////////////////////////////////////////////////////
+
+/* Function that draws the rectangle */
 void MainWindow::paintEvent(QPaintEvent *event)
 {
 
@@ -123,11 +125,9 @@ void MainWindow::paintEvent(QPaintEvent *event)
     }
 
     painter.drawRect(mole);
-
-    // Set initial mole color
-//    painter.fillRect(mole,Qt::black);
 }
 
+/* Function that changes rectangle color */
 void MainWindow::setColorState(int state)
 {
     this->state = state;
