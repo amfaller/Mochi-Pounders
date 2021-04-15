@@ -88,7 +88,7 @@ void MainWindow::on_HammerButton_Blue_clicked()
         }
         else if(moleNotClicked && currColor == COLOR_GREEN){
             moleNotClicked = false;
-            ui->ScoreCounter_Red->display(--blueScore);
+            ui->ScoreCounter_Blue->display(--blueScore);
         }
     }
 }
@@ -106,7 +106,7 @@ void MainWindow::update_time()
 
         // Update Mole      TODO: Make the color random
         moleNotClicked = true;
-        MainWindow::setColorState(currTimeS);
+        MainWindow::setColorState(rand() % 8 + 1);
     }
     // End of game condition
     else{
@@ -147,19 +147,19 @@ void MainWindow::paintEvent(QPaintEvent *event)
     painter.setPen(pen);
     */
 
-    if(state % 3 == 0)
+    if(state <= 2)      // 1 or 2
     {
         painter.setPen(QPen(Qt::blue));
         painter.setBrush(Qt::blue);
         currColor = COLOR_BLUE;
     }
-    else if(state % 5 == 0)
+    else if( state < 5) // 3 or 4
     {
         painter.setPen(QPen(Qt::red));
         painter.setBrush(Qt::red);
         currColor = COLOR_RED;
     }
-    else if(state % 7 == 0)
+    else if(state == 5) // 5
     {
         painter.setPen(QPen(Qt::green));
         painter.setBrush(Qt::green);
