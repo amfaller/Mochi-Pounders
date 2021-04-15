@@ -50,13 +50,16 @@ void MainWindow::on_HammerButton_Red_clicked()
 
     /* Insert an if/else block here to check mole color */
 
-    if(currColor == COLOR_RED){
+    if(moleNotClicked && currColor == COLOR_RED){
+        moleNotClicked = false;
         ui->ScoreCounter_Red->display(++redScore);
     }
-    else if(currColor == COLOR_BLUE){
+    else if(moleNotClicked && currColor == COLOR_BLUE){
+        moleNotClicked = false;
         ui->ScoreCounter_Blue->display(++blueScore);
     }
-    else if(currColor == COLOR_GREEN){
+    else if(moleNotClicked && currColor == COLOR_GREEN){
+        moleNotClicked = false;
         ui->ScoreCounter_Red->display(--redScore);
     }
 }
@@ -71,13 +74,16 @@ void MainWindow::on_HammerButton_Blue_clicked()
     blueScore = ui->ScoreCounter_Blue->intValue();
 
     /* Same checks as in red click handler */
-    if(currColor == COLOR_BLUE){
+    if(moleNotClicked && currColor == COLOR_BLUE){
+        moleNotClicked = false;
         ui->ScoreCounter_Blue->display(++blueScore);
     }
-    else if(currColor == COLOR_RED){
+    else if(moleNotClicked && currColor == COLOR_RED){
+        moleNotClicked = false;
         ui->ScoreCounter_Red->display(++redScore);
     }
-    else if(currColor == COLOR_GREEN){
+    else if(moleNotClicked && currColor == COLOR_GREEN){
+        moleNotClicked = false;
         ui->ScoreCounter_Red->display(--blueScore);
     }
 }
@@ -93,7 +99,8 @@ void MainWindow::update_time()
         // Update timer
         ui->TimeCounter->display(currTimeS--);
 
-        // Update Mole      TODO: Make this random
+        // Update Mole      TODO: Make the color random
+        moleNotClicked = true;
         MainWindow::setColorState(currTimeS);
     }
     // End of game condition
