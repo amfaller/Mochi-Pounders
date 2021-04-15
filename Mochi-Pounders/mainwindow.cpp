@@ -1,6 +1,3 @@
-#include <QTime>
-#include <QTimer>
-
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -9,6 +6,8 @@ int redScore;
 int blueScore;
 int tick = 1000;
 int currTimeS = 60;
+
+QRect mole(300,200,200,200);
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Window Setup //////////////////////////////////////////////////////////////////////////////////
@@ -75,4 +74,26 @@ void MainWindow::update_time()
     else{
         ui->TimeCounter->display(0);
     }
+}
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////
+// Mole Slots /////////////////////////////////////////////////////////////////////////////////////////
+void MainWindow::paintEvent(QPaintEvent *event)
+{
+
+    QPainter painter(this);
+
+    /*  The commented code below alters the border color of the rectangle.
+     *  This may be useful if we want to make a sort of "fakeout" mole - one
+     *  which looks something like one version, but is actually the other upon
+     *  closer inspection.
+    QPen pen;
+    pen.setColor(Qt::red);
+    pen.setWidth(5);
+    painter.setPen(pen);
+    */
+
+    painter.drawRect(mole);
+
+    painter.fillRect(mole,Qt::blue);
 }

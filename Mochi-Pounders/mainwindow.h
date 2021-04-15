@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTime>
+#include <QTimer>
+#include <QPainter>
+#include <QBrush>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,6 +18,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    virtual void paintEvent(QPaintEvent *event);
 
 private slots:
     void on_HammerButton_Red_clicked();

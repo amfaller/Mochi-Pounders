@@ -16,3 +16,4 @@ This game is implemented using the QT framework and is designed for use on the B
 ## Sources
 * [Sample QT Walkthrough](https://www.youtube.com/watch?v=I96uPDifZ1w&ab_channel=DerekBanas)
 * [QT Timer Documentation](https://doc.qt.io/qt-5/timers.html)
+* [Simple Drawing in QT](https://codeloop.org/qt5-qpainter-how-to-draw-rectangle/)
