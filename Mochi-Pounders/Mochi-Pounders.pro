@@ -10,14 +10,17 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    mainmenu.cpp \
     mainwindow.cpp \
     pausewindow.cpp
 
 HEADERS += \
+    mainmenu.h \
     mainwindow.h \
     pausewindow.h
 
 FORMS += \
+    mainmenu.ui \
     mainwindow.ui \
     pausewindow.ui
 

@@ -25,6 +25,9 @@ public:
 
     void update_mole(QPainter &painter);
 
+signals:
+    void show_main_menu () ;        // Signal to go back to the main menu
+
 private slots:
     void on_HammerButton_Red_clicked();
 
