@@ -41,6 +41,8 @@ private slots:
 
     void resume();
 
+    void cleanup();
+
 private:
     Ui::MainWindow *ui;
 //    pausewindow *pauseWindow;

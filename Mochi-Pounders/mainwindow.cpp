@@ -10,10 +10,11 @@ typedef enum {
 } color_e;
 
 /***** Global Variables *****/
+int userTime = 60;
 int redScore;
 int blueScore;
 int tick = 1000;
-int currTimeS = 60;
+int currTimeS = userTime;
 
 bool moleNotClicked = true;     // Flag to prevent button mashing
 color_e currColor;              // Current mole color
@@ -36,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent)
     gameTimer = new QTimer(this);
     connect(gameTimer, &QTimer::timeout, this, &MainWindow::update_time);
     gameTimer->start(tick);
+    ui->TimeCounter->display(currTimeS);
+
 }
 
 MainWindow::~MainWindow()
@@ -196,8 +199,11 @@ void MainWindow::on_PauseButton_clicked()
     // Hide the gameplay window
     hide();
 
-    // Connect the pause window's go signal to the resume function in MainWindow
+    // Connect the pause window's go signal to the resume function here
     QObject::connect(&pauseWindow, SIGNAL(go()), this, SLOT(resume()));
+
+    // Connect the pause window's cleanup signal to the cleanup function here
+    QObject::connect(&pauseWindow, SIGNAL(cleanup()), this, SLOT(cleanup()));
 
     // Show the pause window
     pauseWindow.setModal(true);
@@ -215,4 +221,14 @@ void MainWindow::resume()
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Menu Transition Slots /////////////////////////////////////////////////////////////////////////
 
+/* Slot to clean up the game window when user has exited to main menu*/
+void MainWindow::cleanup()
+{
+    // Clean up the timer
+    delete gameTimer;
 
+    // Reset game parameters
+    currTimeS = userTime;
+    isPaused = false;
+
+}

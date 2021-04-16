@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[11];
-    char stringdata0[152];
+    char stringdata0[154];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,14 +42,14 @@ QT_MOC_LITERAL(6, 96, 13), // "setColorState"
 QT_MOC_LITERAL(7, 110, 5), // "state"
 QT_MOC_LITERAL(8, 116, 22), // "on_PauseButton_clicked"
 QT_MOC_LITERAL(9, 139, 6), // "resume"
-QT_MOC_LITERAL(10, 146, 5) // "begin"
+QT_MOC_LITERAL(10, 146, 7) // "cleanup"
 
     },
     "MainWindow\0show_main_menu\0\0"
     "on_HammerButton_Red_clicked\0"
     "on_HammerButton_Blue_clicked\0update_time\0"
     "setColorState\0state\0on_PauseButton_clicked\0"
-    "resume\0begin"
+    "resume\0cleanup"
 };
 #undef QT_MOC_LITERAL
 
@@ -106,6 +106,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->setColorState((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->on_PauseButton_clicked(); break;
         case 6: _t->resume(); break;
+        case 7: _t->cleanup(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
