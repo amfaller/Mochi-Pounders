@@ -52,7 +52,7 @@
     <string>?</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="button_help_2">
+  <widget class="QPushButton" name="button_credits">
    <property name="geometry">
     <rect>
      <x>410</x>

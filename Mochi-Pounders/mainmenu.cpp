@@ -31,3 +31,15 @@ void MainMenu::show_main_menu()
 {
     show();
 }
+
+void MainMenu::on_button_credits_clicked()
+{
+    class credits creditsScreen;
+
+    // Hide the main menu window
+    hide();
+
+    // Show the credits window
+    creditsScreen.setModal(true);
+    creditsScreen.exec();
+}

@@ -23,7 +23,7 @@ public:
     QPushButton *button_2player;
     QPushButton *button_settings;
     QPushButton *button_help;
-    QPushButton *button_help_2;
+    QPushButton *button_credits;
     QLabel *label;
 
     void setupUi(QDialog *MainMenu)
@@ -40,9 +40,9 @@ public:
         button_help = new QPushButton(MainMenu);
         button_help->setObjectName(QString::fromUtf8("button_help"));
         button_help->setGeometry(QRect(0, 0, 71, 61));
-        button_help_2 = new QPushButton(MainMenu);
-        button_help_2->setObjectName(QString::fromUtf8("button_help_2"));
-        button_help_2->setGeometry(QRect(410, 210, 71, 61));
+        button_credits = new QPushButton(MainMenu);
+        button_credits->setObjectName(QString::fromUtf8("button_credits"));
+        button_credits->setGeometry(QRect(410, 210, 71, 61));
         label = new QLabel(MainMenu);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(110, 20, 271, 71));
@@ -61,7 +61,7 @@ public:
         button_2player->setText(QCoreApplication::translate("MainMenu", "Play", nullptr));
         button_settings->setText(QCoreApplication::translate("MainMenu", "Settings", nullptr));
         button_help->setText(QCoreApplication::translate("MainMenu", "?", nullptr));
-        button_help_2->setText(QCoreApplication::translate("MainMenu", "Credits", nullptr));
+        button_credits->setText(QCoreApplication::translate("MainMenu", "Credits", nullptr));
         label->setText(QCoreApplication::translate("MainMenu", "Mochi Pounders", nullptr));
     } // retranslateUi
 

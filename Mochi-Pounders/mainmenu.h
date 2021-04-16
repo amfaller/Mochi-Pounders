@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "mainwindow.h"
+#include "credits.h"
 
 namespace Ui {
 class MainMenu;
@@ -25,6 +26,8 @@ signals:
 private slots:
     void on_button_2player_clicked();
     void show_main_menu();
+
+    void on_button_credits_clicked();
 
 private:
     Ui::MainMenu *ui;
