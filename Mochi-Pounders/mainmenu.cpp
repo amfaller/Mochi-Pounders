@@ -70,12 +70,11 @@ void MainMenu::on_button_help_clicked()
 
 void MainMenu::on_button_settings_clicked()
 {
-    class settingsmenu settingsScreen;
+    settingsMenu = new class settings();
 
     // Hide the main menu window
     hide();
 
     // Show the credits window
-    settingsScreen.setModal(true);
-    settingsScreen.exec();
+    settingsMenu->show();
 }

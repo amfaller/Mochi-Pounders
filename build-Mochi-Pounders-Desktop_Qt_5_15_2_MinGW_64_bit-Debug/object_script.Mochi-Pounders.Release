@@ -4,10 +4,10 @@ release/main.o
 release/mainmenu.o
 release/mainwindow.o
 release/pausewindow.o
-release/settingsmenu.o
+release/settings.o
 release/moc_credits.o
 release/moc_help.o
 release/moc_mainmenu.o
 release/moc_mainwindow.o
 release/moc_pausewindow.o
-release/moc_settingsmenu.o
+release/moc_settings.o

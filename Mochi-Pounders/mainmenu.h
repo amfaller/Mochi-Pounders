@@ -5,7 +5,7 @@
 #include "mainwindow.h"
 #include "credits.h"
 #include "help.h"
-#include "settingsmenu.h"
+#include "settings.h"
 
 namespace Ui {
 class MainMenu;
@@ -38,6 +38,7 @@ private slots:
 private:
     Ui::MainMenu *ui;
     MainWindow *gameWindow;
+    class settings *settingsMenu;
 };
 
 #endif // MAINMENU_H
