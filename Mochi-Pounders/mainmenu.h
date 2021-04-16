@@ -5,6 +5,7 @@
 #include "mainwindow.h"
 #include "credits.h"
 #include "help.h"
+#include "settingsmenu.h"
 
 namespace Ui {
 class MainMenu;
@@ -31,6 +32,8 @@ private slots:
     void on_button_credits_clicked();
 
     void on_button_help_clicked();
+
+    void on_button_settings_clicked();
 
 private:
     Ui::MainMenu *ui;

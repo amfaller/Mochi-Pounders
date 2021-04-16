@@ -4,8 +4,10 @@ debug/main.o
 debug/mainmenu.o
 debug/mainwindow.o
 debug/pausewindow.o
+debug/settingsmenu.o
 debug/moc_credits.o
 debug/moc_help.o
 debug/moc_mainmenu.o
 debug/moc_mainwindow.o
 debug/moc_pausewindow.o
+debug/moc_settingsmenu.o

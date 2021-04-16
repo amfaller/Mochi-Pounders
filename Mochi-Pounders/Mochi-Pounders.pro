@@ -14,21 +14,24 @@ SOURCES += \
     main.cpp \
     mainmenu.cpp \
     mainwindow.cpp \
-    pausewindow.cpp
+    pausewindow.cpp \
+    settingsmenu.cpp
 
 HEADERS += \
     credits.h \
     help.h \
     mainmenu.h \
     mainwindow.h \
-    pausewindow.h
+    pausewindow.h \
+    settingsmenu.h
 
 FORMS += \
     credits.ui \
     help.ui \
     mainmenu.ui \
     mainwindow.ui \
-    pausewindow.ui
+    pausewindow.ui \
+    settingsmenu.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

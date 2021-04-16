@@ -55,3 +55,15 @@ void MainMenu::on_button_help_clicked()
     helpScreen.setModal(true);
     helpScreen.exec();
 }
+
+void MainMenu::on_button_settings_clicked()
+{
+    class settingsmenu settingsScreen;
+
+    // Hide the main menu window
+    hide();
+
+    // Show the credits window
+    settingsScreen.setModal(true);
+    settingsScreen.exec();
+}
