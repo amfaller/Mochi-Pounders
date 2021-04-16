@@ -10,19 +10,19 @@ typedef enum {
 } color_e;
 
 /***** Global Variables *****/
-int userTime = 60;
+int userTime = 60;              // User-defined time limit
 int redScore;
 int blueScore;
-int tick = 1000;
-int currTimeS = userTime;
+int tick = 1000;                // Game tick in milliseconds
+int currTimeS = userTime;       // Current game time, initially userTime
 
 bool moleNotClicked = true;     // Flag to prevent button mashing
 color_e currColor;              // Current mole color
 
 QRect mole(215,128,50,50);      // Rectangle defining [x y width height] of mole rectangle
 
-QTimer *gameTimer;
-bool isPaused = false;
+QTimer *gameTimer;              // Actual game timer
+bool isPaused = false;          // Flag to tell if pause menu is currently open
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Window Setup //////////////////////////////////////////////////////////////////////////////////
@@ -230,5 +230,7 @@ void MainWindow::cleanup()
     // Reset game parameters
     currTimeS = userTime;
     isPaused = false;
+    redScore = 0;
+    blueScore = 0;
 
 }
