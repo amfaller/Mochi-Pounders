@@ -37,18 +37,23 @@ public:
         button_settings = new QPushButton(MainMenu);
         button_settings->setObjectName(QString::fromUtf8("button_settings"));
         button_settings->setGeometry(QRect(410, 0, 71, 61));
+        QFont font;
+        font.setPointSize(7);
+        button_settings->setFont(font);
         button_help = new QPushButton(MainMenu);
         button_help->setObjectName(QString::fromUtf8("button_help"));
         button_help->setGeometry(QRect(0, 0, 71, 61));
+        button_help->setFont(font);
         button_credits = new QPushButton(MainMenu);
         button_credits->setObjectName(QString::fromUtf8("button_credits"));
         button_credits->setGeometry(QRect(410, 210, 71, 61));
+        button_credits->setFont(font);
         label = new QLabel(MainMenu);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(110, 20, 271, 71));
-        QFont font;
-        font.setPointSize(28);
-        label->setFont(font);
+        QFont font1;
+        font1.setPointSize(26);
+        label->setFont(font1);
 
         retranslateUi(MainMenu);
 

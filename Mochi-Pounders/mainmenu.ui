@@ -35,6 +35,11 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>Settings</string>
    </property>
@@ -48,6 +53,11 @@
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string>?</string>
    </property>
@@ -60,6 +70,11 @@
      <width>71</width>
      <height>61</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Credits</string>
@@ -76,7 +91,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>28</pointsize>
+     <pointsize>26</pointsize>
     </font>
    </property>
    <property name="text">
