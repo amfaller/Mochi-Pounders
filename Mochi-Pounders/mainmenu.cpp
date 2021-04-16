@@ -43,3 +43,15 @@ void MainMenu::on_button_credits_clicked()
     creditsScreen.setModal(true);
     creditsScreen.exec();
 }
+
+void MainMenu::on_button_help_clicked()
+{
+    class help helpScreen;
+
+    // Hide the main menu window
+    hide();
+
+    // Show the credits window
+    helpScreen.setModal(true);
+    helpScreen.exec();
+}

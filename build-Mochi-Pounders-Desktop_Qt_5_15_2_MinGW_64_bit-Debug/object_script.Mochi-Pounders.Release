@@ -1,0 +1,11 @@
+release/credits.o
+release/help.o
+release/main.o
+release/mainmenu.o
+release/mainwindow.o
+release/pausewindow.o
+release/moc_credits.o
+release/moc_help.o
+release/moc_mainmenu.o
+release/moc_mainwindow.o
+release/moc_pausewindow.o

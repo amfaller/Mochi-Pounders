@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     credits.cpp \
+    help.cpp \
     main.cpp \
     mainmenu.cpp \
     mainwindow.cpp \
@@ -17,12 +18,14 @@ SOURCES += \
 
 HEADERS += \
     credits.h \
+    help.h \
     mainmenu.h \
     mainwindow.h \
     pausewindow.h
 
 FORMS += \
     credits.ui \
+    help.ui \
     mainmenu.ui \
     mainwindow.ui \
     pausewindow.ui

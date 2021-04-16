@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "mainwindow.h"
 #include "credits.h"
+#include "help.h"
 
 namespace Ui {
 class MainMenu;
@@ -28,6 +29,8 @@ private slots:
     void show_main_menu();
 
     void on_button_credits_clicked();
+
+    void on_button_help_clicked();
 
 private:
     Ui::MainMenu *ui;
