@@ -1,11 +1,18 @@
 #include "mainmenu.h"
 #include "ui_mainmenu.h"
 
+#include <iostream>
+
+int userTime_mainMenu;
+
 MainMenu::MainMenu(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainMenu)
 {
     ui->setupUi(this);
+
+    // Create the settings menu
+    settingsMenu = new class settings();
 }
 
 MainMenu::~MainMenu()
@@ -60,7 +67,7 @@ void MainMenu::on_button_help_clicked()
     // Hide the main menu window
     hide();
 
-    // Show the credits window
+    // Show the help window
     helpScreen.setModal(true);
     helpScreen.exec();
 }
@@ -70,11 +77,20 @@ void MainMenu::on_button_help_clicked()
 
 void MainMenu::on_button_settings_clicked()
 {
-    settingsMenu = new class settings();
-
     // Hide the main menu window
     hide();
 
-    // Show the credits window
+    // Connect the settings window's sendTime signal to the grab_time slot here
+    QObject::connect(settingsMenu, SIGNAL(sendTime_settings(int)), this, SLOT(grab_time_from_settings(int)));
+
+    // Show the settings window
     settingsMenu->show();
+}
+
+/* Slot to grab the time value from the settings menu */
+void MainMenu::grab_time_from_settings(int value)
+{
+    show();
+    userTime_mainMenu = value;
+//    std::cout << "Received value from settings window: " << userTime_mainMenu << std::endl;
 }

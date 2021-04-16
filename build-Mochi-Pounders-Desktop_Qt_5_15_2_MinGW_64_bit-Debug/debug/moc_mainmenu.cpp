@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainMenu_t {
-    QByteArrayData data[11];
-    char stringdata0[163];
+    QByteArrayData data[13];
+    char stringdata0[193];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,14 +42,17 @@ QT_MOC_LITERAL(6, 46, 25), // "on_button_2player_clicked"
 QT_MOC_LITERAL(7, 72, 14), // "show_main_menu"
 QT_MOC_LITERAL(8, 87, 25), // "on_button_credits_clicked"
 QT_MOC_LITERAL(9, 113, 22), // "on_button_help_clicked"
-QT_MOC_LITERAL(10, 136, 26) // "on_button_settings_clicked"
+QT_MOC_LITERAL(10, 136, 26), // "on_button_settings_clicked"
+QT_MOC_LITERAL(11, 163, 23), // "grab_time_from_settings"
+QT_MOC_LITERAL(12, 187, 5) // "value"
 
     },
     "MainMenu\0begin_2player\0\0help\0settings\0"
     "credits\0on_button_2player_clicked\0"
     "show_main_menu\0on_button_credits_clicked\0"
     "on_button_help_clicked\0"
-    "on_button_settings_clicked"
+    "on_button_settings_clicked\0"
+    "grab_time_from_settings\0value"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,7 +62,7 @@ static const uint qt_meta_data_MainMenu[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,17 +70,18 @@ static const uint qt_meta_data_MainMenu[] = {
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x06 /* Public */,
-       3,    0,   60,    2, 0x06 /* Public */,
-       4,    0,   61,    2, 0x06 /* Public */,
-       5,    0,   62,    2, 0x06 /* Public */,
+       1,    0,   64,    2, 0x06 /* Public */,
+       3,    0,   65,    2, 0x06 /* Public */,
+       4,    0,   66,    2, 0x06 /* Public */,
+       5,    0,   67,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,   63,    2, 0x08 /* Private */,
-       7,    0,   64,    2, 0x08 /* Private */,
-       8,    0,   65,    2, 0x08 /* Private */,
-       9,    0,   66,    2, 0x08 /* Private */,
-      10,    0,   67,    2, 0x08 /* Private */,
+       6,    0,   68,    2, 0x08 /* Private */,
+       7,    0,   69,    2, 0x08 /* Private */,
+       8,    0,   70,    2, 0x08 /* Private */,
+       9,    0,   71,    2, 0x08 /* Private */,
+      10,    0,   72,    2, 0x08 /* Private */,
+      11,    1,   73,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -91,6 +95,7 @@ static const uint qt_meta_data_MainMenu[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   12,
 
        0        // eod
 };
@@ -110,6 +115,7 @@ void MainMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 6: _t->on_button_credits_clicked(); break;
         case 7: _t->on_button_help_clicked(); break;
         case 8: _t->on_button_settings_clicked(); break;
+        case 9: _t->grab_time_from_settings((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -143,7 +149,6 @@ void MainMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             }
         }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject MainMenu::staticMetaObject = { {
@@ -175,13 +180,13 @@ int MainMenu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

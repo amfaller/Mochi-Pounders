@@ -17,6 +17,9 @@ public:
     explicit settings(QWidget *parent = nullptr);
     ~settings();
 
+signals:
+    void sendTime_settings(int time);
+
 private slots:
     void on_slider_time_valueChanged(int value);
 

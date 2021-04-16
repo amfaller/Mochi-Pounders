@@ -35,6 +35,8 @@ private slots:
 
     void on_button_settings_clicked();
 
+    void grab_time_from_settings(int value);
+
 private:
     Ui::MainMenu *ui;
     MainWindow *gameWindow;
