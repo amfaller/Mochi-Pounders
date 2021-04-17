@@ -52,6 +52,10 @@ void MainMenu::on_button_2player_clicked()
 
 void MainMenu::show_main_menu()
 {
+    // Clean up old game window
+    delete gameWindow;
+
+    // Show the main menu
     show();
 }
 
