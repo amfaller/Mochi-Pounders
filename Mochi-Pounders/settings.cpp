@@ -8,6 +8,9 @@ settings::settings(QWidget *parent) :
     ui(new Ui::settings)
 {
     ui->setupUi(this);
+
+    // Set initial slider position
+    ui->slider_time->setSliderPosition(60);
 }
 
 settings::~settings()
