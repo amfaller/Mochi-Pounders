@@ -43,6 +43,8 @@ private slots:
 
     void cleanup();
 
+    void changeTime_game(int time);
+
 private:
     Ui::MainWindow *ui;
 //    pausewindow *pauseWindow;

@@ -127,6 +127,12 @@ void pause(){
     isPaused = true;
 }
 
+/* Slot to receive the user-input game timer */
+void MainWindow::changeTime_game(int time)
+{
+    currTimeS = time;
+}
+
 
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////

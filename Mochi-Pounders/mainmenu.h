@@ -24,6 +24,7 @@ signals:
     void help ();               // Signal to go to help menu
     void settings ();           // Signal to go to settings menu
     void credits ();            // Signal to go to credits menu
+    void sendTime_mainMenu (int time);  // Signal to send user time input to gameplay
 
 private slots:
     void on_button_2player_clicked();

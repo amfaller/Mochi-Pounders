@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-int userTime_mainMenu;
+int userTime_mainMenu = 60;
 
 MainMenu::MainMenu(QWidget *parent) :
     QDialog(parent),
@@ -39,6 +39,12 @@ void MainMenu::on_button_2player_clicked()
 
     // Connect the game window's show_main_menu signal to the show_main_menu slot here
     QObject::connect(gameWindow, SIGNAL(show_main_menu()), this, SLOT(show_main_menu()));
+
+    // Connect the main menu's sendTime_mainMenu signal to the changeTime_game slot in gameWindow
+    QObject::connect(this, SIGNAL(sendTime_mainMenu(int)), gameWindow, SLOT(changeTime_game(int)));
+
+    // Send the user time to the game window
+    emit sendTime_mainMenu(userTime_mainMenu);
 
     // Show the game window
     gameWindow->show();
