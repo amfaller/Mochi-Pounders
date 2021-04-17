@@ -229,12 +229,14 @@ void MainWindow::on_PauseButton_clicked()
     // Connect the pause window's go signal to the resume function here
     QObject::connect(&pauseWindow, SIGNAL(go()), this, SLOT(resume()));
 
-    // Connect the pause window's cleanup signal to the cleanup function here
-    QObject::connect(&pauseWindow, SIGNAL(cleanup()), this, SLOT(cleanup()));
+
 
     if(is_first_pause){
         std::cout << "The first pause" << std::endl;
         is_first_pause = false;
+
+        // Connect the pause window's cleanup signal to the cleanup function here
+        QObject::connect(&pauseWindow, SIGNAL(cleanup()), this, SLOT(cleanup()));
 
         // Show the pause window
         pauseWindow.setModal(true);
