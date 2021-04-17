@@ -12,6 +12,8 @@ typedef enum {
 } color_e;
 
 /***** Global Variables *****/
+int countdownTime = 5;          // # of seconds before match begins
+bool isPregame = true;          // Flag to show whether or not match has started
 int userTime = 60;              // User-defined time limit
 int redScore;
 int blueScore;
@@ -24,7 +26,7 @@ color_e currColor;              // Current mole color
 QRect mole(215,128,50,50);      // Rectangle defining [x y width height] of mole rectangle
 
 QTimer *gameTimer;              // Actual game timer
-bool isPaused = false;          // Flag to tell if pause menu is currently open
+bool isPaused = true;           // Flag to tell if game is currently active
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Window Setup //////////////////////////////////////////////////////////////////////////////////
@@ -39,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     gameTimer = new QTimer(this);
     connect(gameTimer, &QTimer::timeout, this, &MainWindow::update_time);
     gameTimer->start(tick);
-    ui->TimeCounter->display(currTimeS);
+    ui->TimeCounter->display(countdownTime);
 
 }
 
@@ -101,23 +103,34 @@ void MainWindow::on_HammerButton_Blue_clicked()
 /* Updates the game clock every tick */
 void MainWindow::update_time()
 {
-    if(currTimeS > 0){
+    if(isPregame){
         // Update timer
-        ui->TimeCounter->display(currTimeS--);
+        ui->TimeCounter->display(countdownTime--);
 
-        // Update Mole      TODO: Make the color random
-        moleNotClicked = true;
-        MainWindow::setColorState(rand() % 8 + 1);
+        if(countdownTime == 0){
+            isPregame = false;
+            isPaused = false;
+        }
     }
-    // End of game condition
     else{
-        isPaused = true;
-        ui->TimeCounter->display(0);
-        MainWindow::setColorState(-1);
+        if(currTimeS > 0){
+            // Update timer
+            ui->TimeCounter->display(currTimeS--);
 
-        // Get final scores
-        redScore = ui->ScoreCounter_Red->intValue();
-        blueScore = ui->ScoreCounter_Blue->intValue();
+            // Update Mole      TODO: Make the color random
+            moleNotClicked = true;
+            MainWindow::setColorState(rand() % 8 + 1);
+        }
+        // End of game condition        TODO: Make a Game Over screen
+        else{
+            isPaused = true;
+            ui->TimeCounter->display(0);
+            MainWindow::setColorState(-1);
+
+            // Get final scores
+            redScore = ui->ScoreCounter_Red->intValue();
+            blueScore = ui->ScoreCounter_Blue->intValue();
+        }
     }
 }
 
@@ -242,11 +255,15 @@ void MainWindow::cleanup()
     // Clean up the timer
     delete gameTimer;
 
-    // Reset game parameters
-    currTimeS = userTime;
-    isPaused = false;
+    /* Reset game parameters */
+    isPaused = true;
     redScore = 0;
     blueScore = 0;
+
+    // Timer
+    currTimeS = userTime;
+    isPregame = true;
+    countdownTime = 5;
 
 //    emit show_main_menu();
 
