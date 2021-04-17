@@ -32,7 +32,7 @@ void pausewindow::on_button_main_menu_clicked()
     // Hide the pause window
     hide();
 
-    // Show the main menu window
-    mainMenu.setModal(true);
-    mainMenu.exec();
+//    // Show the main menu window
+//    mainMenu.setModal(true);
+//    mainMenu.exec();
 }

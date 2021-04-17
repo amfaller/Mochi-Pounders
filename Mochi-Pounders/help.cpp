@@ -15,12 +15,12 @@ help::~help()
 
 void help::on_button_back_clicked()
 {
-    MainMenu mainMenu;
+//    MainMenu mainMenu;
 
     // Hide the credits window
     hide();
 
     // Show the main menu window
-    mainMenu.setModal(true);
-    mainMenu.exec();
+//    mainMenu.setModal(true);
+//    mainMenu.exec();
 }

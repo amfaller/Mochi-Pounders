@@ -18,7 +18,7 @@ public:
     ~settings();
 
 signals:
-    void sendTime_settings(int time);
+    void sendTime_settings(int time, int exit);
 
 private slots:
     void on_slider_time_valueChanged(int value);

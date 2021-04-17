@@ -19,15 +19,14 @@ void settings::on_slider_time_valueChanged(int value)
 {
     ui->number_time->display(value);
     userTime_settings = value;
+    emit sendTime_settings(userTime_settings, 0);
 }
 
 void settings::on_button_back_clicked()
 {
-    MainMenu mainMenu;
+    // Send the time value to the main window
+    emit sendTime_settings(userTime_settings, 1);
 
     // Hide the credits window
     hide();
-
-    // Send the time value to the main window
-    emit sendTime_settings(userTime_settings);
 }

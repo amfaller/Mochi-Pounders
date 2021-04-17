@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainMenu_t {
-    QByteArrayData data[13];
-    char stringdata0[193];
+    QByteArrayData data[14];
+    char stringdata0[198];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,7 +44,8 @@ QT_MOC_LITERAL(8, 87, 25), // "on_button_credits_clicked"
 QT_MOC_LITERAL(9, 113, 22), // "on_button_help_clicked"
 QT_MOC_LITERAL(10, 136, 26), // "on_button_settings_clicked"
 QT_MOC_LITERAL(11, 163, 23), // "grab_time_from_settings"
-QT_MOC_LITERAL(12, 187, 5) // "value"
+QT_MOC_LITERAL(12, 187, 5), // "value"
+QT_MOC_LITERAL(13, 193, 4) // "exit"
 
     },
     "MainMenu\0begin_2player\0\0help\0settings\0"
@@ -52,7 +53,7 @@ QT_MOC_LITERAL(12, 187, 5) // "value"
     "show_main_menu\0on_button_credits_clicked\0"
     "on_button_help_clicked\0"
     "on_button_settings_clicked\0"
-    "grab_time_from_settings\0value"
+    "grab_time_from_settings\0value\0exit"
 };
 #undef QT_MOC_LITERAL
 
@@ -81,7 +82,7 @@ static const uint qt_meta_data_MainMenu[] = {
        8,    0,   70,    2, 0x08 /* Private */,
        9,    0,   71,    2, 0x08 /* Private */,
       10,    0,   72,    2, 0x08 /* Private */,
-      11,    1,   73,    2, 0x08 /* Private */,
+      11,    2,   73,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -95,7 +96,7 @@ static const uint qt_meta_data_MainMenu[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   12,   13,
 
        0        // eod
 };
@@ -115,7 +116,7 @@ void MainMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 6: _t->on_button_credits_clicked(); break;
         case 7: _t->on_button_help_clicked(); break;
         case 8: _t->on_button_settings_clicked(); break;
-        case 9: _t->grab_time_from_settings((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->grab_time_from_settings((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

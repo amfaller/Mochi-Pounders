@@ -229,4 +229,6 @@ void MainWindow::cleanup()
     redScore = 0;
     blueScore = 0;
 
+    emit show_main_menu();
+
 }
