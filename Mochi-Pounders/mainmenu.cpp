@@ -17,8 +17,8 @@ MainMenu::MainMenu(QWidget *parent) :
     // Connect the settings window's sendTime signal to the grab_time slot here
     QObject::connect(settingsMenu, SIGNAL(sendTime_settings(int, int)), this, SLOT(grab_time_from_settings(int, int)));
 
-    // Create the game window
-    gameWindow = new MainWindow();
+//    // Create the game window
+//    gameWindow = new MainWindow();
 }
 
 MainMenu::~MainMenu()
@@ -31,7 +31,8 @@ MainMenu::~MainMenu()
 
 void MainMenu::on_button_2player_clicked()
 {
-
+    // Create the game window
+    gameWindow = new MainWindow();
 
     // Hide the main menu
 //    this->hide();

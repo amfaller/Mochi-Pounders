@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <iostream>
+
 /* enum for mole color */
 typedef enum {
     COLOR_RED,
@@ -188,7 +190,7 @@ void MainWindow::setColorState(int state)
 bool is_first_pause = true;
 void MainWindow::on_PauseButton_clicked()
 {
-    pausewindow pauseWindow;
+    static pausewindow pauseWindow;
 
     // Pause the timer
     pause();
@@ -197,6 +199,9 @@ void MainWindow::on_PauseButton_clicked()
     hide();
 
     if(is_first_pause){
+        std::cout << "The first pause" << std::endl;
+        is_first_pause = false;
+
         // Connect the pause window's go signal to the resume function here
         QObject::connect(&pauseWindow, SIGNAL(go()), this, SLOT(resume()));
 
@@ -208,6 +213,8 @@ void MainWindow::on_PauseButton_clicked()
         pauseWindow.exec();
     }
     else{
+        std::cout << "Not the first pause" << std::endl;
+//        pauseWindow.setModal(true);
         pauseWindow.show();
     }
 }
