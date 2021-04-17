@@ -8,3 +8,5 @@ When pausewindow emits cleanup(), handler in game window should emit another sig
 Play -> Pause -> Main Menu -> Play -> Pause -> Resume	Opens an additional instance of game menu
 
 Pause -> Resume opens a new instance of game menu
+
+~!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Fixed above this line
