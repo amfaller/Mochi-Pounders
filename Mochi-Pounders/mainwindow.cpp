@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#define PREGAME_TIME 5
+
 /* enum for mole color */
 typedef enum {
     COLOR_RED,
@@ -12,21 +14,21 @@ typedef enum {
 } color_e;
 
 /***** Global Variables *****/
-int countdownTime = 5;          // # of seconds before match begins
-bool isPregame = true;          // Flag to show whether or not match has started
-int userTime = 60;              // User-defined time limit
+int countdownTime = PREGAME_TIME;   // # of seconds before match begins
+bool isPregame = true;              // Flag to show whether or not match has started
+int userTime = 60;                  // User-defined time limit
 int redScore;
 int blueScore;
-int tick = 1000;                // Game tick in milliseconds
-int currTimeS = userTime;       // Current game time, initially userTime
+int tick = 1000;                    // Game tick in milliseconds
+int currTimeS = userTime;           // Current game time, initially userTime
 
-bool moleNotClicked = true;     // Flag to prevent button mashing
-color_e currColor;              // Current mole color
+bool moleNotClicked = true;         // Flag to prevent button mashing
+color_e currColor;                  // Current mole color
 
-QRect mole(215,128,50,50);      // Rectangle defining [x y width height] of mole rectangle
+QRect mole(215,128,50,50);          // Rectangle defining [x y width height] of mole rectangle
 
-QTimer *gameTimer;              // Actual game timer
-bool isPaused = true;           // Flag to tell if game is currently active
+QTimer *gameTimer;                  // Actual game timer
+bool isPaused = true;               // Flag to tell if game is currently active
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Window Setup //////////////////////////////////////////////////////////////////////////////////
@@ -168,29 +170,36 @@ void MainWindow::paintEvent(QPaintEvent *event)
     painter.setPen(pen);
     */
 
-    if(state <= 2)      // 1 or 2
-    {
-        painter.setPen(QPen(Qt::blue));
-        painter.setBrush(Qt::blue);
-        currColor = COLOR_BLUE;
-    }
-    else if( state < 5) // 3 or 4
-    {
-        painter.setPen(QPen(Qt::red));
-        painter.setBrush(Qt::red);
-        currColor = COLOR_RED;
-    }
-    else if(state == 5) // 5
-    {
-        painter.setPen(QPen(Qt::green));
-        painter.setBrush(Qt::green);
-        currColor = COLOR_GREEN;
-    }
-    else                // 6 7 or 8
-    {
+    if(isPregame){
         painter.setPen(QPen(Qt::black));
         painter.setBrush(Qt::black);
         currColor = COLOR_BLACK;
+    }
+    else{
+        if(state <= 2)      // 1 or 2
+        {
+            painter.setPen(QPen(Qt::blue));
+            painter.setBrush(Qt::blue);
+            currColor = COLOR_BLUE;
+        }
+        else if( state < 5) // 3 or 4
+        {
+            painter.setPen(QPen(Qt::red));
+            painter.setBrush(Qt::red);
+            currColor = COLOR_RED;
+        }
+        else if(state == 5) // 5
+        {
+            painter.setPen(QPen(Qt::green));
+            painter.setBrush(Qt::green);
+            currColor = COLOR_GREEN;
+        }
+        else                // 6 7 or 8
+        {
+            painter.setPen(QPen(Qt::black));
+            painter.setBrush(Qt::black);
+            currColor = COLOR_BLACK;
+        }
     }
 
     painter.drawRect(mole);
@@ -263,7 +272,7 @@ void MainWindow::cleanup()
     // Timer
     currTimeS = userTime;
     isPregame = true;
-    countdownTime = 5;
+    countdownTime = PREGAME_TIME;
 
 //    emit show_main_menu();
 
