@@ -185,6 +185,7 @@ void MainWindow::setColorState(int state)
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Pause Menu Transition Slots ////////////////////////////////////////////////////////////////////////
 
+bool is_first_pause = true;
 void MainWindow::on_PauseButton_clicked()
 {
     pausewindow pauseWindow;
@@ -195,15 +196,20 @@ void MainWindow::on_PauseButton_clicked()
     // Hide the gameplay window
     hide();
 
-    // Connect the pause window's go signal to the resume function here
-    QObject::connect(&pauseWindow, SIGNAL(go()), this, SLOT(resume()));
+    if(is_first_pause){
+        // Connect the pause window's go signal to the resume function here
+        QObject::connect(&pauseWindow, SIGNAL(go()), this, SLOT(resume()));
 
-    // Connect the pause window's cleanup signal to the cleanup function here
-    QObject::connect(&pauseWindow, SIGNAL(cleanup()), this, SLOT(cleanup()));
+        // Connect the pause window's cleanup signal to the cleanup function here
+        QObject::connect(&pauseWindow, SIGNAL(cleanup()), this, SLOT(cleanup()));
 
-    // Show the pause window
-    pauseWindow.setModal(true);
-    pauseWindow.exec();
+        // Show the pause window
+        pauseWindow.setModal(true);
+        pauseWindow.exec();
+    }
+    else{
+        pauseWindow.show();
+    }
 }
 
 /* Slot to resume the game */
