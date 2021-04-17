@@ -34,7 +34,7 @@ void MainMenu::on_button_2player_clicked()
 
 
     // Hide the main menu
-    this->hide();
+//    this->hide();
 
     // Connect the game window's show_main_menu signal to the show_main_menu slot here
     QObject::connect(gameWindow, SIGNAL(show_main_menu()), this, SLOT(show_main_menu()));
