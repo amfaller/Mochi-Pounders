@@ -30,6 +30,8 @@ QRect mole(215,128,50,50);          // Rectangle defining [x y width height] of 
 QTimer *gameTimer;                  // Actual game timer
 bool isPaused = true;               // Flag to tell if game is currently active
 
+bool isGameOver = false;
+
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Window Setup //////////////////////////////////////////////////////////////////////////////////
 
@@ -121,15 +123,20 @@ void MainWindow::update_time()
         }
     }
     else{
-        if(currTimeS > 0){
+
+        if(isGameOver){
+            // Call the gameover subroutine
+            this->game_over(redScore, blueScore);
+        }
+        else if(currTimeS > 0){
             // Update timer
             ui->TimeCounter->display(currTimeS--);
 
-            // Update Mole      TODO: Make the color random
+            // Update Mole      TODO: Make the color random but fair
             moleNotClicked = true;
             MainWindow::setColorState(rand() % 8 + 1);
         }
-        // End of game condition        TODO: Make a Game Over screen
+        // End of game condition
         else{
             isPaused = true;
             ui->TimeCounter->display(0);
@@ -139,8 +146,7 @@ void MainWindow::update_time()
             redScore = ui->ScoreCounter_Red->intValue();
             blueScore = ui->ScoreCounter_Blue->intValue();
 
-            // Call the gameover subroutine
-            this->game_over(redScore, blueScore);
+            isGameOver = true;
         }
     }
 }
@@ -290,6 +296,7 @@ void MainWindow::cleanup()
     currTimeS = userTime;
     isPregame = true;
     countdownTime = PREGAME_TIME;
+    isGameOver = false;
 
 //    emit show_main_menu();
 

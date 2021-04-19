@@ -85,7 +85,7 @@
      </font>
     </property>
     <property name="text">
-     <string>We're all winners if we have fun :)</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;We're all winners if we have fun :)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>

@@ -30,10 +30,11 @@ void GameOverWindow::recv_scores(int red, int blue)
     if(red > blue){
         ui->Label_WhoWon->setText("Red wins!");
     }
-    else if (blue < red){
+    else if (red < blue){
         ui->Label_WhoWon->setText("Blue wins!");
     }
     else{
         ui->Label_WhoWon->setText("Tie Game!");
     }
+    ui->Label_WhoWon->setAlignment(Qt::AlignCenter);
 }

@@ -83,7 +83,7 @@ public:
         GameOverWindow->setWindowTitle(QCoreApplication::translate("GameOverWindow", "MainWindow", nullptr));
         Label_GameOver->setText(QCoreApplication::translate("GameOverWindow", "Game Over!", nullptr));
         button_main_menu->setText(QCoreApplication::translate("GameOverWindow", "Main Menu", nullptr));
-        Label_WhoWon->setText(QCoreApplication::translate("GameOverWindow", "We're all winners if we have fun :)", nullptr));
+        Label_WhoWon->setText(QCoreApplication::translate("GameOverWindow", "<html><head/><body><p align=\"center\">We're all winners if we have fun :)</p></body></html>", nullptr));
     } // retranslateUi
 
 };
