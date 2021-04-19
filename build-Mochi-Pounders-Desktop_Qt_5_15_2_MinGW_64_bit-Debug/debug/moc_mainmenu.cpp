@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainMenu_t {
-    QByteArrayData data[16];
-    char stringdata0[221];
+    QByteArrayData data[17];
+    char stringdata0[227];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,18 +40,19 @@ QT_MOC_LITERAL(4, 29, 8), // "settings"
 QT_MOC_LITERAL(5, 38, 7), // "credits"
 QT_MOC_LITERAL(6, 46, 17), // "sendTime_mainMenu"
 QT_MOC_LITERAL(7, 64, 4), // "time"
-QT_MOC_LITERAL(8, 69, 25), // "on_button_2player_clicked"
-QT_MOC_LITERAL(9, 95, 14), // "show_main_menu"
-QT_MOC_LITERAL(10, 110, 25), // "on_button_credits_clicked"
-QT_MOC_LITERAL(11, 136, 22), // "on_button_help_clicked"
-QT_MOC_LITERAL(12, 159, 26), // "on_button_settings_clicked"
-QT_MOC_LITERAL(13, 186, 23), // "grab_time_from_settings"
-QT_MOC_LITERAL(14, 210, 5), // "value"
-QT_MOC_LITERAL(15, 216, 4) // "exit"
+QT_MOC_LITERAL(8, 69, 5), // "score"
+QT_MOC_LITERAL(9, 75, 25), // "on_button_2player_clicked"
+QT_MOC_LITERAL(10, 101, 14), // "show_main_menu"
+QT_MOC_LITERAL(11, 116, 25), // "on_button_credits_clicked"
+QT_MOC_LITERAL(12, 142, 22), // "on_button_help_clicked"
+QT_MOC_LITERAL(13, 165, 26), // "on_button_settings_clicked"
+QT_MOC_LITERAL(14, 192, 23), // "grab_time_from_settings"
+QT_MOC_LITERAL(15, 216, 5), // "value"
+QT_MOC_LITERAL(16, 222, 4) // "exit"
 
     },
     "MainMenu\0begin_2player\0\0help\0settings\0"
-    "credits\0sendTime_mainMenu\0time\0"
+    "credits\0sendTime_mainMenu\0time\0score\0"
     "on_button_2player_clicked\0show_main_menu\0"
     "on_button_credits_clicked\0"
     "on_button_help_clicked\0"
@@ -78,22 +79,22 @@ static const uint qt_meta_data_MainMenu[] = {
        3,    0,   70,    2, 0x06 /* Public */,
        4,    0,   71,    2, 0x06 /* Public */,
        5,    0,   72,    2, 0x06 /* Public */,
-       6,    1,   73,    2, 0x06 /* Public */,
+       6,    2,   73,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       8,    0,   76,    2, 0x08 /* Private */,
-       9,    0,   77,    2, 0x08 /* Private */,
-      10,    0,   78,    2, 0x08 /* Private */,
-      11,    0,   79,    2, 0x08 /* Private */,
-      12,    0,   80,    2, 0x08 /* Private */,
-      13,    2,   81,    2, 0x08 /* Private */,
+       9,    0,   78,    2, 0x08 /* Private */,
+      10,    0,   79,    2, 0x08 /* Private */,
+      11,    0,   80,    2, 0x08 /* Private */,
+      12,    0,   81,    2, 0x08 /* Private */,
+      13,    0,   82,    2, 0x08 /* Private */,
+      14,    3,   83,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    7,    8,
 
  // slots: parameters
     QMetaType::Void,
@@ -101,7 +102,7 @@ static const uint qt_meta_data_MainMenu[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   14,   15,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   15,    8,   16,
 
        0        // eod
 };
@@ -116,13 +117,13 @@ void MainMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 1: _t->help(); break;
         case 2: _t->settings(); break;
         case 3: _t->credits(); break;
-        case 4: _t->sendTime_mainMenu((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->sendTime_mainMenu((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 5: _t->on_button_2player_clicked(); break;
         case 6: _t->show_main_menu(); break;
         case 7: _t->on_button_credits_clicked(); break;
         case 8: _t->on_button_help_clicked(); break;
         case 9: _t->on_button_settings_clicked(); break;
-        case 10: _t->grab_time_from_settings((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 10: _t->grab_time_from_settings((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -156,7 +157,7 @@ void MainMenu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             }
         }
         {
-            using _t = void (MainMenu::*)(int );
+            using _t = void (MainMenu::*)(int , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&MainMenu::sendTime_mainMenu)) {
                 *result = 4;
                 return;
@@ -230,9 +231,9 @@ void MainMenu::credits()
 }
 
 // SIGNAL 4
-void MainMenu::sendTime_mainMenu(int _t1)
+void MainMenu::sendTime_mainMenu(int _t1, int _t2)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 QT_WARNING_POP

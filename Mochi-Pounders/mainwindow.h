@@ -45,7 +45,7 @@ private slots:
 
     void cleanup();
 
-    void changeTime_game(int time);
+    void changeTime_game(int time, int score);
 
     void game_over(int redScore, int blueScore);
 

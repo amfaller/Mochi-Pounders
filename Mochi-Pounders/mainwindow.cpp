@@ -32,6 +32,8 @@ bool isPaused = true;               // Flag to tell if game is currently active
 
 bool isGameOver = false;
 
+int scoreLimit = 99;                 // User-defined score limit
+
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Main Window Setup //////////////////////////////////////////////////////////////////////////////////
 
@@ -124,6 +126,10 @@ void MainWindow::update_time()
     }
     else{
 
+        if(redScore == scoreLimit || blueScore == scoreLimit){
+            currTimeS = 0;
+        }
+
         if(isGameOver){
             // Call the gameover subroutine
             this->game_over(redScore, blueScore);
@@ -158,9 +164,10 @@ void pause(){
 }
 
 /* Slot to receive the user-input game timer */
-void MainWindow::changeTime_game(int time)
+void MainWindow::changeTime_game(int time, int score)
 {
     currTimeS = time;
+    scoreLimit = score;
 }
 
 

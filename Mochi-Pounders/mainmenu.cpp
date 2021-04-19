@@ -4,6 +4,7 @@
 #include <iostream>
 
 int userTime_mainMenu = 60;
+int userScore_mainMenu = 99;
 
 MainMenu::MainMenu(QWidget *parent) :
     QDialog(parent),
@@ -15,7 +16,7 @@ MainMenu::MainMenu(QWidget *parent) :
     settingsMenu = new class settings();
 
     // Connect the settings window's sendTime signal to the grab_time slot here
-    QObject::connect(settingsMenu, SIGNAL(sendTime_settings(int, int)), this, SLOT(grab_time_from_settings(int, int)));
+    QObject::connect(settingsMenu, SIGNAL(sendTime_settings(int,int,int)), this, SLOT(grab_time_from_settings(int,int,int)));
 
 //    // Create the game window
 //    gameWindow = new MainWindow();
@@ -41,10 +42,10 @@ void MainMenu::on_button_2player_clicked()
     QObject::connect(gameWindow, SIGNAL(show_main_menu()), this, SLOT(show_main_menu()));
 
     // Connect the main menu's sendTime_mainMenu signal to the changeTime_game slot in gameWindow
-    QObject::connect(this, SIGNAL(sendTime_mainMenu(int)), gameWindow, SLOT(changeTime_game(int)));
+    QObject::connect(this, SIGNAL(sendTime_mainMenu(int,int)), gameWindow, SLOT(changeTime_game(int,int)));
 
     // Send the user time to the game window
-    emit sendTime_mainMenu(userTime_mainMenu);
+    emit sendTime_mainMenu(userTime_mainMenu, userScore_mainMenu);
 
     // Show the game window
     gameWindow->show();
@@ -103,11 +104,12 @@ void MainMenu::on_button_settings_clicked()
 }
 
 /* Slot to grab the time value from the settings menu */
-void MainMenu::grab_time_from_settings(int value, int exit)
+void MainMenu::grab_time_from_settings(int value, int score, int exit)
 {
     if(exit)
         show();
 
     userTime_mainMenu = value;
-    std::cout << "Received value from settings window: " << userTime_mainMenu << "    Exited: " << exit << std::endl;
+    userScore_mainMenu = score;
+    std::cout << "Received value from settings window: " << userTime_mainMenu << "    " << userScore_mainMenu << "    Exited: " << exit << std::endl;
 }

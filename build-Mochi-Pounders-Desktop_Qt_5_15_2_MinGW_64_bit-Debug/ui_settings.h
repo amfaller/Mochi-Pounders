@@ -30,6 +30,9 @@ public:
     QSlider *slider_time;
     QLCDNumber *number_time;
     QLabel *label;
+    QLabel *label_score;
+    QLCDNumber *number_score;
+    QSlider *slider_score;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -45,24 +48,38 @@ public:
         button_back->setGeometry(QRect(0, 180, 75, 75));
         slider_time = new QSlider(centralwidget);
         slider_time->setObjectName(QString::fromUtf8("slider_time"));
-        slider_time->setGeometry(QRect(110, 110, 160, 22));
+        slider_time->setGeometry(QRect(100, 70, 160, 22));
         slider_time->setOrientation(Qt::Horizontal);
         number_time = new QLCDNumber(centralwidget);
         number_time->setObjectName(QString::fromUtf8("number_time"));
-        number_time->setGeometry(QRect(330, 110, 64, 23));
+        number_time->setGeometry(QRect(320, 70, 64, 23));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(170, 60, 181, 41));
+        label->setGeometry(QRect(160, 20, 181, 41));
         QFont font;
         font.setPointSize(16);
         font.setBold(true);
         font.setWeight(75);
         label->setFont(font);
+        label_score = new QLabel(centralwidget);
+        label_score->setObjectName(QString::fromUtf8("label_score"));
+        label_score->setGeometry(QRect(160, 110, 181, 41));
+        label_score->setFont(font);
+        number_score = new QLCDNumber(centralwidget);
+        number_score->setObjectName(QString::fromUtf8("number_score"));
+        number_score->setGeometry(QRect(320, 160, 64, 23));
+        slider_score = new QSlider(centralwidget);
+        slider_score->setObjectName(QString::fromUtf8("slider_score"));
+        slider_score->setGeometry(QRect(100, 160, 160, 22));
+        slider_score->setOrientation(Qt::Horizontal);
         settings->setCentralWidget(centralwidget);
         slider_time->raise();
         number_time->raise();
         button_back->raise();
         label->raise();
+        label_score->raise();
+        number_score->raise();
+        slider_score->raise();
         menubar = new QMenuBar(settings);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 480, 21));
@@ -81,6 +98,7 @@ public:
         settings->setWindowTitle(QCoreApplication::translate("settings", "MainWindow", nullptr));
         button_back->setText(QCoreApplication::translate("settings", "Back", nullptr));
         label->setText(QCoreApplication::translate("settings", "Time Limit", nullptr));
+        label_score->setText(QCoreApplication::translate("settings", "Score Limit", nullptr));
     } // retranslateUi
 
 };

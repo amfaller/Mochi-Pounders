@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[19];
-    char stringdata0[225];
+    QByteArrayData data[20];
+    char stringdata0[231];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,9 +48,10 @@ QT_MOC_LITERAL(12, 160, 6), // "resume"
 QT_MOC_LITERAL(13, 167, 7), // "cleanup"
 QT_MOC_LITERAL(14, 175, 15), // "changeTime_game"
 QT_MOC_LITERAL(15, 191, 4), // "time"
-QT_MOC_LITERAL(16, 196, 9), // "game_over"
-QT_MOC_LITERAL(17, 206, 8), // "redScore"
-QT_MOC_LITERAL(18, 215, 9) // "blueScore"
+QT_MOC_LITERAL(16, 196, 5), // "score"
+QT_MOC_LITERAL(17, 202, 9), // "game_over"
+QT_MOC_LITERAL(18, 212, 8), // "redScore"
+QT_MOC_LITERAL(19, 221, 9) // "blueScore"
 
     },
     "MainWindow\0show_main_menu\0\0send_scores\0"
@@ -58,7 +59,7 @@ QT_MOC_LITERAL(18, 215, 9) // "blueScore"
     "on_HammerButton_Blue_clicked\0update_time\0"
     "setColorState\0state\0on_PauseButton_clicked\0"
     "resume\0cleanup\0changeTime_game\0time\0"
-    "game_over\0redScore\0blueScore"
+    "score\0game_over\0redScore\0blueScore"
 };
 #undef QT_MOC_LITERAL
 
@@ -87,8 +88,8 @@ static const uint qt_meta_data_MainWindow[] = {
       11,    0,   81,    2, 0x08 /* Private */,
       12,    0,   82,    2, 0x08 /* Private */,
       13,    0,   83,    2, 0x08 /* Private */,
-      14,    1,   84,    2, 0x08 /* Private */,
-      16,    2,   87,    2, 0x08 /* Private */,
+      14,    2,   84,    2, 0x08 /* Private */,
+      17,    2,   89,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -102,8 +103,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   15,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   17,   18,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   15,   16,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   18,   19,
 
        0        // eod
 };
@@ -123,7 +124,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->on_PauseButton_clicked(); break;
         case 7: _t->resume(); break;
         case 8: _t->cleanup(); break;
-        case 9: _t->changeTime_game((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->changeTime_game((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 10: _t->game_over((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }

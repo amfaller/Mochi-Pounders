@@ -18,12 +18,14 @@ public:
     ~settings();
 
 signals:
-    void sendTime_settings(int time, int exit);
+    void sendTime_settings(int time, int score, int exit);
 
 private slots:
     void on_slider_time_valueChanged(int value);
 
     void on_button_back_clicked();
+
+    void on_slider_score_valueChanged(int value);
 
 private:
     Ui::settings *ui;
