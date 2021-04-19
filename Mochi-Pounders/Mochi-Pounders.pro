@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     credits.cpp \
+    gameoverwindow.cpp \
     help.cpp \
     main.cpp \
     mainmenu.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 
 HEADERS += \
     credits.h \
+    gameoverwindow.h \
     help.h \
     mainmenu.h \
     mainwindow.h \
@@ -27,6 +29,7 @@ HEADERS += \
 
 FORMS += \
     credits.ui \
+    gameoverwindow.ui \
     help.ui \
     mainmenu.ui \
     mainwindow.ui \

@@ -1,4 +1,5 @@
 release/credits.o
+release/gameoverwindow.o
 release/help.o
 release/main.o
 release/mainmenu.o
@@ -6,6 +7,7 @@ release/mainwindow.o
 release/pausewindow.o
 release/settings.o
 release/moc_credits.o
+release/moc_gameoverwindow.o
 release/moc_help.o
 release/moc_mainmenu.o
 release/moc_mainwindow.o

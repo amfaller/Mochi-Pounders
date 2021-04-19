@@ -45,6 +45,12 @@ MainWindow::MainWindow(QWidget *parent)
     gameTimer->start(tick);
     ui->TimeCounter->display(countdownTime);
 
+    // Game over window
+    gow = new class GameOverWindow();
+
+    // Connect slots to send final scores from here to game over window
+    QObject::connect(this, SIGNAL(send_scores(int,int)), gow, SLOT(recv_scores(int,int)));
+
 }
 
 MainWindow::~MainWindow()
@@ -132,6 +138,9 @@ void MainWindow::update_time()
             // Get final scores
             redScore = ui->ScoreCounter_Red->intValue();
             blueScore = ui->ScoreCounter_Blue->intValue();
+
+            // Call the gameover subroutine
+            this->game_over(redScore, blueScore);
         }
     }
 }
@@ -268,6 +277,8 @@ void MainWindow::cleanup()
 
     // Hide the game window
 //    hide();
+
+    // Fully destruct the game window & its children
     this->~MainWindow();
 
     /* Reset game parameters */
@@ -283,3 +294,26 @@ void MainWindow::cleanup()
 //    emit show_main_menu();
 
 }
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////
+// Game Over Slots ////////////////////////////////////////////////////////////////////////////////////
+
+/* Function to show game over screen */
+void MainWindow::game_over(int redScore, int blueScore)
+{
+    // Connect cleanup signal and slot
+    QObject::connect(gow, SIGNAL(cleanup()), this, SLOT(cleanup()));
+
+    // Send scores to game over screen
+    emit send_scores(redScore, blueScore);
+
+    // Show the game over window
+    gow->show();
+}
+
+
+
+
+
+
+
