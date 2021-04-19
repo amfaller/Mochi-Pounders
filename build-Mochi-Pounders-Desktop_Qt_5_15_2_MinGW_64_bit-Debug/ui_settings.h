@@ -33,6 +33,7 @@ public:
     QLabel *label_score;
     QLCDNumber *number_score;
     QSlider *slider_score;
+    QPushButton *button_defaults;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -72,6 +73,9 @@ public:
         slider_score->setObjectName(QString::fromUtf8("slider_score"));
         slider_score->setGeometry(QRect(100, 160, 160, 22));
         slider_score->setOrientation(Qt::Horizontal);
+        button_defaults = new QPushButton(centralwidget);
+        button_defaults->setObjectName(QString::fromUtf8("button_defaults"));
+        button_defaults->setGeometry(QRect(410, 180, 75, 75));
         settings->setCentralWidget(centralwidget);
         slider_time->raise();
         number_time->raise();
@@ -80,6 +84,7 @@ public:
         label_score->raise();
         number_score->raise();
         slider_score->raise();
+        button_defaults->raise();
         menubar = new QMenuBar(settings);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 480, 21));
@@ -99,6 +104,7 @@ public:
         button_back->setText(QCoreApplication::translate("settings", "Back", nullptr));
         label->setText(QCoreApplication::translate("settings", "Time Limit", nullptr));
         label_score->setText(QCoreApplication::translate("settings", "Score Limit", nullptr));
+        button_defaults->setText(QCoreApplication::translate("settings", "Defaults", nullptr));
     } // retranslateUi
 
 };

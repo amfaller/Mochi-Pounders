@@ -44,3 +44,9 @@ void settings::on_slider_score_valueChanged(int value)
     userScore_settings = value;
     emit sendTime_settings(userTime_settings, userScore_settings, 0);
 }
+
+void settings::on_button_defaults_clicked()
+{
+    ui->slider_time->setSliderPosition(60);
+    ui->slider_score->setSliderPosition(99);
+}

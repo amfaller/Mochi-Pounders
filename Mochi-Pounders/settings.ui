@@ -113,6 +113,19 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QPushButton" name="button_defaults">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>180</y>
+      <width>75</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Defaults</string>
+    </property>
+   </widget>
    <zorder>slider_time</zorder>
    <zorder>number_time</zorder>
    <zorder>button_back</zorder>
@@ -120,6 +133,7 @@
    <zorder>label_score</zorder>
    <zorder>number_score</zorder>
    <zorder>slider_score</zorder>
+   <zorder>button_defaults</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

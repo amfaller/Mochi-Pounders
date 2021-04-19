@@ -27,6 +27,8 @@ private slots:
 
     void on_slider_score_valueChanged(int value);
 
+    void on_button_defaults_clicked();
+
 private:
     Ui::settings *ui;
 };
