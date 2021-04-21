@@ -122,6 +122,11 @@
       <height>75</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Defaults</string>
     </property>
