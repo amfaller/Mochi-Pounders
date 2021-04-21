@@ -17,9 +17,6 @@ MainMenu::MainMenu(QWidget *parent) :
 
     // Connect the settings window's sendTime signal to the grab_time slot here
     QObject::connect(settingsMenu, SIGNAL(sendTime_settings(int,int,int)), this, SLOT(grab_time_from_settings(int,int,int)));
-
-//    // Create the game window
-//    gameWindow = new MainWindow();
 }
 
 MainMenu::~MainMenu()
@@ -34,9 +31,6 @@ void MainMenu::on_button_2player_clicked()
 {
     // Create the game window
     gameWindow = new MainWindow();
-
-    // Hide the main menu
-//    this->hide();
 
     // Connect the game window's show_main_menu signal to the show_main_menu slot here
     QObject::connect(gameWindow, SIGNAL(show_main_menu()), this, SLOT(show_main_menu()));
@@ -67,9 +61,6 @@ void MainMenu::on_button_credits_clicked()
 {
     class credits creditsScreen;
 
-    // Hide the main menu window
-//    hide();
-
     // Show the credits window
     creditsScreen.setModal(true);
     creditsScreen.exec();
@@ -81,9 +72,6 @@ void MainMenu::on_button_credits_clicked()
 void MainMenu::on_button_help_clicked()
 {
     class help helpScreen;
-
-    // Hide the main menu window
-//    hide();
 
     // Show the help window
     helpScreen.setModal(true);
@@ -97,7 +85,6 @@ void MainMenu::on_button_settings_clicked()
 {
     // Hide the main menu window (has to happen bc main menu is a dialog and settings is a window)
     hide();
-
 
     // Show the settings window
     settingsMenu->show();

@@ -32,21 +32,13 @@ signals:
 
 private slots:
     void on_HammerButton_Red_clicked();
-
     void on_HammerButton_Blue_clicked();
-
     void update_time();
-
     void setColorState(int state);
-
     void on_PauseButton_clicked();
-
     void resume();
-
     void cleanup();
-
     void changeTime_game(int time, int score);
-
     void game_over(int redScore, int blueScore);
 
 private:

@@ -170,8 +170,6 @@ void MainWindow::changeTime_game(int time, int score)
     scoreLimit = score;
 }
 
-
-
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Mole Slots /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -181,16 +179,6 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
     Q_UNUSED(event)
     QPainter painter(this);
-
-    /*  The commented code below alters the border color of the rectangle.
-     *  This may be useful if we want to make a sort of "fakeout" mole - one
-     *  which looks something like one version, but is actually the other upon
-     *  closer inspection.
-    QPen pen;
-    pen.setColor(Qt::red);
-    pen.setWidth(5);
-    painter.setPen(pen);
-    */
 
     if(isPregame){
         painter.setPen(QPen(Qt::black));
@@ -245,15 +233,11 @@ void MainWindow::on_PauseButton_clicked()
     // Pause the timer
     pause();
 
-    // Hide the gameplay window
-//    hide();
-
     // Connect the pause window's go signal to the resume function here
     QObject::connect(&pauseWindow, SIGNAL(go()), this, SLOT(resume()));
 
     // Connect the pause window's cleanup signal to the cleanup function here
     QObject::connect(&pauseWindow, SIGNAL(cleanup()), this, SLOT(cleanup()));
-
 
     if(is_first_pause){
         std::cout << "The first pause" << std::endl;
@@ -265,7 +249,6 @@ void MainWindow::on_PauseButton_clicked()
     }
     else{
         std::cout << "Not the first pause" << std::endl;
-//        pauseWindow.setModal(true);
         pauseWindow.show();
     }
 }
@@ -274,7 +257,6 @@ void MainWindow::on_PauseButton_clicked()
 void MainWindow::resume()
 {  
     isPaused = false;
-//    show();
     gameTimer->start();
 }
 
@@ -285,11 +267,6 @@ void MainWindow::resume()
 void MainWindow::cleanup()
 {
     std::cout << "Cleanup signal received, handling..." << std::endl;
-    // Clean up the timer
-//    delete gameTimer;
-
-    // Hide the game window
-//    hide();
 
     // Fully destruct the game window & its children
     this->~MainWindow();
@@ -304,9 +281,6 @@ void MainWindow::cleanup()
     isPregame = true;
     countdownTime = PREGAME_TIME;
     isGameOver = false;
-
-//    emit show_main_menu();
-
 }
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////

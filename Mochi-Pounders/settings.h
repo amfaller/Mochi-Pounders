@@ -22,11 +22,8 @@ signals:
 
 private slots:
     void on_slider_time_valueChanged(int value);
-
     void on_button_back_clicked();
-
     void on_slider_score_valueChanged(int value);
-
     void on_button_defaults_clicked();
 
 private:

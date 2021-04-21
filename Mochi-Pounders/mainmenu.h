@@ -29,13 +29,9 @@ signals:
 private slots:
     void on_button_2player_clicked();
     void show_main_menu();
-
     void on_button_credits_clicked();
-
     void on_button_help_clicked();
-
     void on_button_settings_clicked();
-
     void grab_time_from_settings(int value, int score, int exit);
 
 private:

@@ -24,15 +24,9 @@ void pausewindow::on_button_resume_clicked()
 
 void pausewindow::on_button_main_menu_clicked()
 {
-    MainMenu mainMenu;
-
     // Tell the game window to cleanup
     emit cleanup();
 
     // Hide the pause window
     hide();
-
-//    // Show the main menu window
-//    mainMenu.setModal(true);
-//    mainMenu.exec();
 }

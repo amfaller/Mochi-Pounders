@@ -76,6 +76,9 @@ public:
         button_defaults = new QPushButton(centralwidget);
         button_defaults->setObjectName(QString::fromUtf8("button_defaults"));
         button_defaults->setGeometry(QRect(410, 180, 75, 75));
+        QFont font1;
+        font1.setPointSize(7);
+        button_defaults->setFont(font1);
         settings->setCentralWidget(centralwidget);
         slider_time->raise();
         number_time->raise();

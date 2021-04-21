@@ -52,7 +52,7 @@ public:
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(110, 20, 271, 71));
         QFont font1;
-        font1.setPointSize(26);
+        font1.setPointSize(24);
         label->setFont(font1);
 
         retranslateUi(MainMenu);

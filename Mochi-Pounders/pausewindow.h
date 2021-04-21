@@ -23,7 +23,6 @@ signals:
 
 private slots:
     void on_button_resume_clicked();
-
     void on_button_main_menu_clicked();
 
 private:
