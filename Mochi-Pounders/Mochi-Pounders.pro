@@ -9,17 +9,32 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    credits.cpp \
+    gameoverwindow.cpp \
+    help.cpp \
     main.cpp \
+    mainmenu.cpp \
     mainwindow.cpp \
-    pausewindow.cpp
+    pausewindow.cpp \
+    settings.cpp
 
 HEADERS += \
+    credits.h \
+    gameoverwindow.h \
+    help.h \
+    mainmenu.h \
     mainwindow.h \
-    pausewindow.h
+    pausewindow.h \
+    settings.h
 
 FORMS += \
+    credits.ui \
+    gameoverwindow.ui \
+    help.ui \
+    mainmenu.ui \
     mainwindow.ui \
-    pausewindow.ui
+    pausewindow.ui \
+    settings.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
