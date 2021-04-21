@@ -30,6 +30,7 @@ public:
     QLCDNumber *TimeCounter;
     QPushButton *PauseButton;
     QLabel *Mochi;
+    QLabel *Background;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -58,8 +59,19 @@ public:
         PauseButton->setGeometry(QRect(200, 250, 75, 23));
         Mochi = new QLabel(centralwidget);
         Mochi->setObjectName(QString::fromUtf8("Mochi"));
-        Mochi->setGeometry(QRect(165, 75, 150, 150));
+        Mochi->setGeometry(QRect(165, 60, 150, 150));
+        Background = new QLabel(centralwidget);
+        Background->setObjectName(QString::fromUtf8("Background"));
+        Background->setGeometry(QRect(0, 0, 480, 272));
         MainWindow->setCentralWidget(centralwidget);
+        Background->raise();
+        HammerButton_Red->raise();
+        HammerButton_Blue->raise();
+        ScoreCounter_Red->raise();
+        ScoreCounter_Blue->raise();
+        TimeCounter->raise();
+        PauseButton->raise();
+        Mochi->raise();
 
         retranslateUi(MainWindow);
 
@@ -73,6 +85,7 @@ public:
         HammerButton_Blue->setText(QCoreApplication::translate("MainWindow", "Blue", nullptr));
         PauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
         Mochi->setText(QString());
+        Background->setText(QString());
     } // retranslateUi
 
 };

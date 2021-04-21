@@ -140,6 +140,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Resources.cpp
 debug/qrc_Resources.cpp: ../Mochi-Pounders/Resources.qrc \
 		D:/Qt/5.15.2/mingw81_64/bin/rcc.exe \
+		../Mochi-Pounders/Gameplay_Background.png \
 		../Mochi-Pounders/Mochi_Blue.png \
 		../Mochi-Pounders/Mochi_Green.png \
 		../Mochi-Pounders/Mochi_Red.png
@@ -1932,16 +1933,11 @@ debug/mainwindow.o: ../Mochi-Pounders/mainwindow.cpp ../Mochi-Pounders/mainwindo
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLCDNumber \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlcdnumber.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
+		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QStatusBar \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qstatusbar.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\Mochi-Pounders\mainwindow.cpp
 

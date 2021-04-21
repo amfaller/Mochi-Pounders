@@ -87,7 +87,7 @@
     <property name="geometry">
      <rect>
       <x>165</x>
-      <y>75</y>
+      <y>60</y>
       <width>150</width>
       <height>150</height>
      </rect>
@@ -96,6 +96,27 @@
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="Background">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>272</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>Background</zorder>
+   <zorder>HammerButton_Red</zorder>
+   <zorder>HammerButton_Blue</zorder>
+   <zorder>ScoreCounter_Red</zorder>
+   <zorder>ScoreCounter_Blue</zorder>
+   <zorder>TimeCounter</zorder>
+   <zorder>PauseButton</zorder>
+   <zorder>Mochi</zorder>
   </widget>
  </widget>
  <resources/>

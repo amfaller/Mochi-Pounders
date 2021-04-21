@@ -49,6 +49,11 @@ MainWindow::MainWindow(QWidget *parent)
     gameTimer->start(tick);
     ui->TimeCounter->display(countdownTime);
 
+    // Background
+    QPixmap background(":/images/Gameplay_Background.png");
+    ui->Background->setPixmap(background);
+    ui->Background->setScaledContents(true);
+
     // Game over window
     gow = new class GameOverWindow();
 
