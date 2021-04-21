@@ -191,18 +191,33 @@ void MainWindow::paintEvent(QPaintEvent *event)
             painter.setPen(QPen(Qt::blue));
             painter.setBrush(Qt::blue);
             currColor = COLOR_BLUE;
+
+            // Mochi
+            QPixmap mochi_blue(":/images/Mochi_Blue.png");
+            ui->Mochi->setPixmap(mochi_blue);
+            ui->Mochi->setScaledContents(true);
         }
         else if( state < 5) // 3 or 4
         {
             painter.setPen(QPen(Qt::red));
             painter.setBrush(Qt::red);
             currColor = COLOR_RED;
+
+            // Mochi
+            QPixmap mochi_blue(":/images/Mochi_Red.png");
+            ui->Mochi->setPixmap(mochi_blue);
+            ui->Mochi->setScaledContents(true);
         }
         else if(state == 5) // 5
         {
             painter.setPen(QPen(Qt::green));
             painter.setBrush(Qt::green);
             currColor = COLOR_GREEN;
+
+            // Mochi
+            QPixmap mochi_blue(":/images/Mochi_Green.png");
+            ui->Mochi->setPixmap(mochi_blue);
+            ui->Mochi->setScaledContents(true);
         }
         else                // 6 7 or 8
         {

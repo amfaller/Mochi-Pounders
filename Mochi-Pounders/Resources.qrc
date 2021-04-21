@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Mochi_Blue.png</file>
+        <file>Mochi_Green.png</file>
+        <file>Mochi_Red.png</file>
+    </qresource>
+</RCC>

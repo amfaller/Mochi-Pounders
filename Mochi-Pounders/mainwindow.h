@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QPainter>
 #include <QBrush>
+#include <QPixmap>
 
 #include "pausewindow.h"
 #include "gameoverwindow.h"

@@ -12,10 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,8 +29,7 @@ public:
     QLCDNumber *ScoreCounter_Blue;
     QLCDNumber *TimeCounter;
     QPushButton *PauseButton;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QLabel *Mochi;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -54,18 +52,14 @@ public:
         ScoreCounter_Blue->setGeometry(QRect(410, 0, 71, 81));
         TimeCounter = new QLCDNumber(centralwidget);
         TimeCounter->setObjectName(QString::fromUtf8("TimeCounter"));
-        TimeCounter->setGeometry(QRect(210, 0, 71, 81));
+        TimeCounter->setGeometry(QRect(190, 0, 100, 81));
         PauseButton = new QPushButton(centralwidget);
         PauseButton->setObjectName(QString::fromUtf8("PauseButton"));
-        PauseButton->setGeometry(QRect(200, 210, 75, 23));
+        PauseButton->setGeometry(QRect(200, 250, 75, 23));
+        Mochi = new QLabel(centralwidget);
+        Mochi->setObjectName(QString::fromUtf8("Mochi"));
+        Mochi->setGeometry(QRect(165, 75, 150, 150));
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 480, 21));
-        MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
 
@@ -78,6 +72,7 @@ public:
         HammerButton_Red->setText(QCoreApplication::translate("MainWindow", "Red", nullptr));
         HammerButton_Blue->setText(QCoreApplication::translate("MainWindow", "Blue", nullptr));
         PauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
+        Mochi->setText(QString());
     } // retranslateUi
 
 };
