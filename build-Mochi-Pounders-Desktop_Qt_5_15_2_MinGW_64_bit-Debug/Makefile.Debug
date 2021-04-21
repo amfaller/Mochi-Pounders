@@ -141,6 +141,7 @@ compiler_rcc_clean:
 debug/qrc_Resources.cpp: ../Mochi-Pounders/Resources.qrc \
 		D:/Qt/5.15.2/mingw81_64/bin/rcc.exe \
 		../Mochi-Pounders/Gameplay_Background.png \
+		../Mochi-Pounders/empty.png \
 		../Mochi-Pounders/Mochi_Blue.png \
 		../Mochi-Pounders/Mochi_Green.png \
 		../Mochi-Pounders/Mochi_Red.png
