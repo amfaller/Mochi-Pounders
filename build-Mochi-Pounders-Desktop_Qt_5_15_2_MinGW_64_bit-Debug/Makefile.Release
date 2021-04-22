@@ -143,6 +143,7 @@ release/qrc_Resources.cpp: ../Mochi-Pounders/Resources.qrc \
 		../Mochi-Pounders/Mochi_Green_Bonked.png \
 		../Mochi-Pounders/Mochi_Blue_Bonked.png \
 		../Mochi-Pounders/Gameplay_Background.png \
+		../Mochi-Pounders/Generic_Background.png \
 		../Mochi-Pounders/empty.png \
 		../Mochi-Pounders/Mochi_Blue.png \
 		../Mochi-Pounders/Mochi_Red_Bonked.png \

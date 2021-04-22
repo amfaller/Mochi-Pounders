@@ -10,6 +10,11 @@ settings::settings(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Background
+    QPixmap background(":/images/Generic_Background.png");
+    ui->Background->setPixmap(background);
+    ui->Background->setScaledContents(true);
+
     // Set initial slider positions
     ui->slider_time->setSliderPosition(60);
     ui->slider_score->setSliderPosition(99);

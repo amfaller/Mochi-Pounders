@@ -8,5 +8,6 @@
         <file>Mochi_Blue_Bonked.png</file>
         <file>Mochi_Green_Bonked.png</file>
         <file>Mochi_Red_Bonked.png</file>
+        <file>Generic_Background.png</file>
     </qresource>
 </RCC>
