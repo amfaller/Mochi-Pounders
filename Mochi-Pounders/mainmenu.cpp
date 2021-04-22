@@ -105,3 +105,8 @@ void MainMenu::grab_time_from_settings(int value, int score, int exit)
     userScore_mainMenu = score;
 //    std::cout << "Received value from settings window: " << userTime_mainMenu << "    " << userScore_mainMenu << "    Exited: " << exit << std::endl;
 }
+
+void MainMenu::on_button_exit_clicked()
+{
+    QApplication::quit();
+}

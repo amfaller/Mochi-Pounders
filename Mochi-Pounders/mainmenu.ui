@@ -111,12 +111,31 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="button_exit">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>211</y>
+     <width>70</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
   <zorder>Background</zorder>
   <zorder>button_2player</zorder>
   <zorder>button_settings</zorder>
   <zorder>button_help</zorder>
   <zorder>button_credits</zorder>
   <zorder>label</zorder>
+  <zorder>button_exit</zorder>
  </widget>
  <resources/>
  <connections/>

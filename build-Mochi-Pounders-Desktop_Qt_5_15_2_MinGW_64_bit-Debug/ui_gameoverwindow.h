@@ -40,7 +40,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         Label_GameOver = new QLabel(centralwidget);
         Label_GameOver->setObjectName(QString::fromUtf8("Label_GameOver"));
-        Label_GameOver->setGeometry(QRect(150, -20, 281, 81));
+        Label_GameOver->setGeometry(QRect(0, 0, 480, 50));
         QFont font;
         font.setPointSize(22);
         font.setBold(true);
@@ -85,7 +85,7 @@ public:
     void retranslateUi(QMainWindow *GameOverWindow)
     {
         GameOverWindow->setWindowTitle(QCoreApplication::translate("GameOverWindow", "MainWindow", nullptr));
-        Label_GameOver->setText(QCoreApplication::translate("GameOverWindow", "Game Over!", nullptr));
+        Label_GameOver->setText(QCoreApplication::translate("GameOverWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">Game Over!</span></p></body></html>", nullptr));
         button_main_menu->setText(QCoreApplication::translate("GameOverWindow", "Main Menu", nullptr));
         Label_WhoWon->setText(QCoreApplication::translate("GameOverWindow", "<html><head/><body><p align=\"center\">We're all winners if we have fun :)</p></body></html>", nullptr));
         Background->setText(QCoreApplication::translate("GameOverWindow", "TextLabel", nullptr));

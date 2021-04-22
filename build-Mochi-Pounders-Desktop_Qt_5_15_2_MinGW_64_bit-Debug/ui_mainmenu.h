@@ -26,6 +26,7 @@ public:
     QPushButton *button_credits;
     QLabel *label;
     QLabel *Background;
+    QPushButton *button_exit;
 
     void setupUi(QDialog *MainMenu)
     {
@@ -58,12 +59,17 @@ public:
         Background = new QLabel(MainMenu);
         Background->setObjectName(QString::fromUtf8("Background"));
         Background->setGeometry(QRect(0, 0, 480, 272));
+        button_exit = new QPushButton(MainMenu);
+        button_exit->setObjectName(QString::fromUtf8("button_exit"));
+        button_exit->setGeometry(QRect(0, 211, 70, 61));
+        button_exit->setFont(font);
         Background->raise();
         button_2player->raise();
         button_settings->raise();
         button_help->raise();
         button_credits->raise();
         label->raise();
+        button_exit->raise();
 
         retranslateUi(MainMenu);
 
@@ -79,6 +85,7 @@ public:
         button_credits->setText(QCoreApplication::translate("MainMenu", "Credits", nullptr));
         label->setText(QCoreApplication::translate("MainMenu", "<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">Mochi Pounders</span></p></body></html>", nullptr));
         Background->setText(QString());
+        button_exit->setText(QCoreApplication::translate("MainMenu", "Exit", nullptr));
     } // retranslateUi
 
 };
