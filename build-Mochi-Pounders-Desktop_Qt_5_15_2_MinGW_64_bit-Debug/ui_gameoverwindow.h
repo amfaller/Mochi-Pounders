@@ -14,9 +14,7 @@
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,8 +28,7 @@ public:
     QLCDNumber *ScoreFinal_Blue;
     QPushButton *button_main_menu;
     QLabel *Label_WhoWon;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QLabel *Background;
 
     void setupUi(QMainWindow *GameOverWindow)
     {
@@ -50,13 +47,13 @@ public:
         Label_GameOver->setFont(font);
         ScoreFinal_Red = new QLCDNumber(centralwidget);
         ScoreFinal_Red->setObjectName(QString::fromUtf8("ScoreFinal_Red"));
-        ScoreFinal_Red->setGeometry(QRect(0, 0, 141, 181));
+        ScoreFinal_Red->setGeometry(QRect(0, 0, 141, 201));
         ScoreFinal_Blue = new QLCDNumber(centralwidget);
         ScoreFinal_Blue->setObjectName(QString::fromUtf8("ScoreFinal_Blue"));
-        ScoreFinal_Blue->setGeometry(QRect(340, 0, 141, 181));
+        ScoreFinal_Blue->setGeometry(QRect(340, 0, 141, 201));
         button_main_menu = new QPushButton(centralwidget);
         button_main_menu->setObjectName(QString::fromUtf8("button_main_menu"));
-        button_main_menu->setGeometry(QRect(0, 180, 491, 75));
+        button_main_menu->setGeometry(QRect(0, 200, 491, 75));
         Label_WhoWon = new QLabel(centralwidget);
         Label_WhoWon->setObjectName(QString::fromUtf8("Label_WhoWon"));
         Label_WhoWon->setEnabled(true);
@@ -64,14 +61,16 @@ public:
         QFont font1;
         font1.setPointSize(10);
         Label_WhoWon->setFont(font1);
+        Background = new QLabel(centralwidget);
+        Background->setObjectName(QString::fromUtf8("Background"));
+        Background->setGeometry(QRect(0, 0, 480, 272));
         GameOverWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(GameOverWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 480, 21));
-        GameOverWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(GameOverWindow);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        GameOverWindow->setStatusBar(statusbar);
+        Background->raise();
+        Label_GameOver->raise();
+        ScoreFinal_Red->raise();
+        ScoreFinal_Blue->raise();
+        button_main_menu->raise();
+        Label_WhoWon->raise();
 
         retranslateUi(GameOverWindow);
 
@@ -84,6 +83,7 @@ public:
         Label_GameOver->setText(QCoreApplication::translate("GameOverWindow", "Game Over!", nullptr));
         button_main_menu->setText(QCoreApplication::translate("GameOverWindow", "Main Menu", nullptr));
         Label_WhoWon->setText(QCoreApplication::translate("GameOverWindow", "<html><head/><body><p align=\"center\">We're all winners if we have fun :)</p></body></html>", nullptr));
+        Background->setText(QCoreApplication::translate("GameOverWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };

@@ -99,8 +99,8 @@ public:
     {
         settings->setWindowTitle(QCoreApplication::translate("settings", "MainWindow", nullptr));
         button_back->setText(QCoreApplication::translate("settings", "Back", nullptr));
-        label->setText(QCoreApplication::translate("settings", "Time Limit", nullptr));
-        label_score->setText(QCoreApplication::translate("settings", "Score Limit", nullptr));
+        label->setText(QCoreApplication::translate("settings", "<html><head/><body><p><span style=\" color:#ffffff;\">Time Limit</span></p></body></html>", nullptr));
+        label_score->setText(QCoreApplication::translate("settings", "<html><head/><body><p><span style=\" color:#ffffff;\">Score Limit</span></p></body></html>", nullptr));
         button_defaults->setText(QCoreApplication::translate("settings", "Defaults", nullptr));
         Background->setText(QString());
     } // retranslateUi

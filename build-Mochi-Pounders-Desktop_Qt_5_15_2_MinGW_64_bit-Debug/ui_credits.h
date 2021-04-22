@@ -33,7 +33,7 @@ public:
         button_back->setGeometry(QRect(0, 200, 75, 75));
         textBrowser = new QTextBrowser(credits);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(0, 1, 481, 271));
+        textBrowser->setGeometry(QRect(0, 0, 480, 272));
         textBrowser->raise();
         button_back->raise();
 
@@ -50,15 +50,15 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600;\">Mochi Pounders Version 0.5</span></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; font-weight:600;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px"
-                        "; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Mochi Pounders was created by Tony Faller (amfaller@bu.edu) for Boston University's EC535: Introduction to Embedded Systems course. It is based on the browser-based game Mole Hammers, which sadly is no longer playable on many systems because Flash is no longer supported.</p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">See the README.md in the game's Github repo (<a href=\"https://github.com/amfaller/Mochi-Pounders.git\"><span style=\" font-size:8pt; text-decoration: underline; color:#0000ff"
-                        ";\">https://github.com/amfaller/Mochi-Pounders.git</span></a>) for a full list of sources.</p></body></html>", nullptr));
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt; font-weight:600; color:#ffffff;\">Mochi Pounders Version 0.5</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; font-weight:600; color:#ffffff;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+"<p align=\"center"
+                        "\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Mochi Pounders was created by Tony Faller (amfaller@bu.edu) for Boston University's EC535: Introduction to Embedded Systems course. It is based on the browser-based game Mole Hammers, which sadly is no longer playable on many systems because Flash is no longer supported.</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">See the README.md in the game"
+                        "'s Github repo (</span><a href=\"https://github.com/amfaller/Mochi-Pounders.git\"><span style=\" font-size:8pt; text-decoration: underline; color:#ffffff;\">https://github.com/amfaller/Mochi-Pounders.git</span></a><span style=\" color:#ffffff;\">) for a full list of sources.</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

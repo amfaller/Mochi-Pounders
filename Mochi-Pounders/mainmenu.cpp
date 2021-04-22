@@ -17,6 +17,11 @@ MainMenu::MainMenu(QWidget *parent) :
 
     // Connect the settings window's sendTime signal to the grab_time slot here
     QObject::connect(settingsMenu, SIGNAL(sendTime_settings(int,int,int)), this, SLOT(grab_time_from_settings(int,int,int)));
+
+    // Background
+    QPixmap background(":/images/Generic_Background.png");
+    ui->Background->setPixmap(background);
+    ui->Background->setScaledContents(true);
 }
 
 MainMenu::~MainMenu()

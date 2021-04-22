@@ -6,6 +6,9 @@ credits::credits(QWidget *parent) :
     ui(new Ui::credits)
 {
     ui->setupUi(this);
+
+    // Background
+    ui->textBrowser->setStyleSheet("background-image:url(:/images/Generic_Background.png);");
 }
 
 credits::~credits()

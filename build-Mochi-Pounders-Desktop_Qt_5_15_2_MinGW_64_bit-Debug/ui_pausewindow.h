@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +22,7 @@ class Ui_pausewindow
 public:
     QPushButton *button_resume;
     QPushButton *button_main_menu;
+    QLabel *Background;
 
     void setupUi(QDialog *pausewindow)
     {
@@ -33,6 +35,12 @@ public:
         button_main_menu = new QPushButton(pausewindow);
         button_main_menu->setObjectName(QString::fromUtf8("button_main_menu"));
         button_main_menu->setGeometry(QRect(260, 70, 161, 131));
+        Background = new QLabel(pausewindow);
+        Background->setObjectName(QString::fromUtf8("Background"));
+        Background->setGeometry(QRect(0, 0, 480, 272));
+        Background->raise();
+        button_resume->raise();
+        button_main_menu->raise();
 
         retranslateUi(pausewindow);
 
@@ -44,6 +52,7 @@ public:
         pausewindow->setWindowTitle(QCoreApplication::translate("pausewindow", "Dialog", nullptr));
         button_resume->setText(QCoreApplication::translate("pausewindow", "Resume", nullptr));
         button_main_menu->setText(QCoreApplication::translate("pausewindow", "Main Menu", nullptr));
+        Background->setText(QString());
     } // retranslateUi
 
 };

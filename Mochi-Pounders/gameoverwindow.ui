@@ -40,7 +40,7 @@
       <x>0</x>
       <y>0</y>
       <width>141</width>
-      <height>181</height>
+      <height>201</height>
      </rect>
     </property>
    </widget>
@@ -50,7 +50,7 @@
       <x>340</x>
       <y>0</y>
       <width>141</width>
-      <height>181</height>
+      <height>201</height>
      </rect>
     </property>
    </widget>
@@ -58,7 +58,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>180</y>
+      <y>200</y>
       <width>491</width>
       <height>75</height>
      </rect>
@@ -88,18 +88,26 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;We're all winners if we have fun :)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <widget class="QLabel" name="Background">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>272</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <zorder>Background</zorder>
+   <zorder>Label_GameOver</zorder>
+   <zorder>ScoreFinal_Red</zorder>
+   <zorder>ScoreFinal_Blue</zorder>
+   <zorder>button_main_menu</zorder>
+   <zorder>Label_WhoWon</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>480</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

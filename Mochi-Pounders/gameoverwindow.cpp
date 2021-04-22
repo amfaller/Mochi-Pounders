@@ -6,6 +6,11 @@ GameOverWindow::GameOverWindow(QWidget *parent) :
     ui(new Ui::GameOverWindow)
 {
     ui->setupUi(this);
+
+    // Background
+    QPixmap background(":/images/Gameplay_Background.png");
+    ui->Background->setPixmap(background);
+    ui->Background->setScaledContents(true);
 }
 
 GameOverWindow::~GameOverWindow()
