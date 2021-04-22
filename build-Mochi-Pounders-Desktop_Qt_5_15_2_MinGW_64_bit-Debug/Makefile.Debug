@@ -140,9 +140,12 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Resources.cpp
 debug/qrc_Resources.cpp: ../Mochi-Pounders/Resources.qrc \
 		D:/Qt/5.15.2/mingw81_64/bin/rcc.exe \
+		../Mochi-Pounders/Mochi_Green_Bonked.png \
+		../Mochi-Pounders/Mochi_Blue_Bonked.png \
 		../Mochi-Pounders/Gameplay_Background.png \
 		../Mochi-Pounders/empty.png \
 		../Mochi-Pounders/Mochi_Blue.png \
+		../Mochi-Pounders/Mochi_Red_Bonked.png \
 		../Mochi-Pounders/Mochi_Green.png \
 		../Mochi-Pounders/Mochi_Red.png
 	D:\Qt\5.15.2\mingw81_64\bin\rcc.exe -name Resources ..\Mochi-Pounders\Resources.qrc -o debug\qrc_Resources.cpp

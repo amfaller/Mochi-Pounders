@@ -5,5 +5,8 @@
         <file>Mochi_Red.png</file>
         <file>Gameplay_Background.png</file>
         <file>empty.png</file>
+        <file>Mochi_Blue_Bonked.png</file>
+        <file>Mochi_Green_Bonked.png</file>
+        <file>Mochi_Red_Bonked.png</file>
     </qresource>
 </RCC>

@@ -124,7 +124,7 @@ void MainWindow::update_time()
         // Update timer
         ui->TimeCounter->display(countdownTime--);
 
-        if(countdownTime == 0){
+        if(countdownTime == -1){
             isPregame = false;
             isPaused = false;
         }
@@ -189,6 +189,11 @@ void MainWindow::paintEvent(QPaintEvent *event)
         painter.setPen(QPen(Qt::black));
         painter.setBrush(Qt::black);
         currColor = COLOR_BLACK;
+
+        // Mochi
+        QPixmap mochi_black(":/images/empty.png");
+        ui->Mochi->setPixmap(mochi_black);
+        ui->Mochi->setScaledContents(true);
     }
     else{
         if(state <= 2)      // 1 or 2
