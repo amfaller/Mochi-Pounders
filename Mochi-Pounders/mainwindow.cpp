@@ -70,15 +70,6 @@ MainWindow::~MainWindow()
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Hammer Slots ///////////////////////////////////////////////////////////////////////////////////////
 
-/* Function to bonk mochi */
-void MainWindow::bonk(int isBonked)
-{
-    std::cout << "BONK" << std::endl;
-
-    this->isBonked = isBonked;
-    update();
-}
-
 /* Red Hammer Click Handler*/
 void MainWindow::on_HammerButton_Red_clicked()
 {
@@ -211,23 +202,22 @@ void MainWindow::paintEvent(QPaintEvent *event)
         ui->Mochi->setScaledContents(true);
     }
     else{
-        if(state == 9){
-
+        if(state == 9){     // Bonk condition
             if(currColor == COLOR_RED){
-                std::cout << " - Setting red bonk" << std::endl;
+//                std::cout << " - Setting red bonk" << std::endl;
                 QPixmap mochi_red_bonked(":/images/Mochi_Red_Bonked.png");
                 ui->Mochi->setPixmap(mochi_red_bonked);
                 ui->Mochi->setScaledContents(true);
             }
             else if (currColor == COLOR_BLUE){
-                std::cout << " - Setting blue bonk" << std::endl;
+//                std::cout << " - Setting blue bonk" << std::endl;
                 QPixmap mochi_blue_bonked(":/images/Mochi_Blue_Bonked.png");
                 ui->Mochi->setPixmap(mochi_blue_bonked);
                 ui->Mochi->setScaledContents(true);
             }
 
             else if (currColor == COLOR_GREEN){
-                std::cout << " - Setting green bonk" << std::endl;
+//                std::cout << " - Setting green bonk" << std::endl;
                 QPixmap mochi_green_bonked(":/images/Mochi_Green_Bonked.png");
                 ui->Mochi->setPixmap(mochi_green_bonked);
                 ui->Mochi->setScaledContents(true);
@@ -312,7 +302,7 @@ void MainWindow::on_PauseButton_clicked()
     QObject::connect(&pauseWindow, SIGNAL(cleanup()), this, SLOT(cleanup()));
 
     if(is_first_pause){
-        std::cout << "The first pause" << std::endl;
+//        std::cout << "The first pause" << std::endl;
         is_first_pause = false;
 
         // Show the pause window
@@ -320,7 +310,7 @@ void MainWindow::on_PauseButton_clicked()
         pauseWindow.exec();
     }
     else{
-        std::cout << "Not the first pause" << std::endl;
+//        std::cout << "Not the first pause" << std::endl;
         pauseWindow.show();
     }
 }
@@ -338,7 +328,7 @@ void MainWindow::resume()
 /* Slot to clean up the game window when user has exited to main menu*/
 void MainWindow::cleanup()
 {
-    std::cout << "Cleanup signal received, handling..." << std::endl;
+//    std::cout << "Cleanup signal received, handling..." << std::endl;
 
     // Fully destruct the game window & its children
     this->~MainWindow();

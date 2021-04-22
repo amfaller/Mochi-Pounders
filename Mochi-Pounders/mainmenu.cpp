@@ -98,5 +98,5 @@ void MainMenu::grab_time_from_settings(int value, int score, int exit)
 
     userTime_mainMenu = value;
     userScore_mainMenu = score;
-    std::cout << "Received value from settings window: " << userTime_mainMenu << "    " << userScore_mainMenu << "    Exited: " << exit << std::endl;
+//    std::cout << "Received value from settings window: " << userTime_mainMenu << "    " << userScore_mainMenu << "    Exited: " << exit << std::endl;
 }
