@@ -66,8 +66,11 @@
       <x>190</x>
       <y>0</y>
       <width>100</width>
-      <height>81</height>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Filled</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="PauseButton">

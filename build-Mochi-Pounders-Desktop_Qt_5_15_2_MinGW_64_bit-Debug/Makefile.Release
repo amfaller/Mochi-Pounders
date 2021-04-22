@@ -144,11 +144,14 @@ release/qrc_Resources.cpp: ../Mochi-Pounders/Resources.qrc \
 		../Mochi-Pounders/Mochi_Blue_Bonked.png \
 		../Mochi-Pounders/Gameplay_Background.png \
 		../Mochi-Pounders/Generic_Background.png \
+		../Mochi-Pounders/Mochi_Red_Smile.png \
 		../Mochi-Pounders/empty.png \
 		../Mochi-Pounders/Mochi_Blue.png \
 		../Mochi-Pounders/Mochi_Red_Bonked.png \
+		../Mochi-Pounders/Mochi_Green_Smile.png \
 		../Mochi-Pounders/Mochi_Green.png \
-		../Mochi-Pounders/Mochi_Red.png
+		../Mochi-Pounders/Mochi_Red.png \
+		../Mochi-Pounders/Mochi_Blue_Smile.png
 	D:\Qt\5.15.2\mingw81_64\bin\rcc.exe -name Resources ..\Mochi-Pounders\Resources.qrc -o release\qrc_Resources.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -398,6 +401,7 @@ release/moc_gameoverwindow.cpp: ../Mochi-Pounders/gameoverwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		release/moc_predefs.h \
 		D:/Qt/5.15.2/mingw81_64/bin/moc.exe
 	D:\Qt\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include D:/Tony/Documents/GitHub/Mochi-Pounders/build-Mochi-Pounders-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/Qt/5.15.2/mingw81_64/mkspecs/win32-g++ -ID:/Tony/Documents/GitHub/Mochi-Pounders/Mochi-Pounders -ID:/Qt/5.15.2/mingw81_64/include -ID:/Qt/5.15.2/mingw81_64/include/QtWidgets -ID:/Qt/5.15.2/mingw81_64/include/QtGui -ID:/Qt/5.15.2/mingw81_64/include/QtANGLE -ID:/Qt/5.15.2/mingw81_64/include/QtCore -I. -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\Mochi-Pounders\gameoverwindow.h -o release\moc_gameoverwindow.cpp
@@ -1351,6 +1355,7 @@ release/gameoverwindow.o: ../Mochi-Pounders/gameoverwindow.cpp ../Mochi-Pounders
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qicon.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
 		ui_gameoverwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/QVariant \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QApplication \
@@ -1365,16 +1370,9 @@ release/gameoverwindow.o: ../Mochi-Pounders/gameoverwindow.cpp ../Mochi-Pounders
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QStatusBar \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qstatusbar.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\gameoverwindow.o ..\Mochi-Pounders\gameoverwindow.cpp
 
@@ -2077,6 +2075,9 @@ release/pausewindow.o: ../Mochi-Pounders/pausewindow.cpp ../Mochi-Pounders/pause
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
+		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
@@ -2226,19 +2227,12 @@ release/settings.o: ../Mochi-Pounders/settings.cpp ../Mochi-Pounders/settings.h 
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QSlider \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qslider.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qabstractslider.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QStatusBar \
-		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qstatusbar.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\settings.o ..\Mochi-Pounders\settings.cpp
 

@@ -34,12 +34,24 @@ void GameOverWindow::recv_scores(int red, int blue)
 
     if(red > blue){
         ui->Label_WhoWon->setText("Red wins!");
+
+        QPixmap mochi_red_smile(":/images/Mochi_Red_Smile.png");
+        ui->Mochi->setPixmap(mochi_red_smile);
+        ui->Mochi->setScaledContents(true);
     }
     else if (red < blue){
         ui->Label_WhoWon->setText("Blue wins!");
+
+        QPixmap mochi_blue_smile(":/images/Mochi_Blue_Smile.png");
+        ui->Mochi->setPixmap(mochi_blue_smile);
+        ui->Mochi->setScaledContents(true);
     }
     else{
         ui->Label_WhoWon->setText("Tie Game!");
+
+        QPixmap mochi_green_smile(":/images/Mochi_Green_Smile.png");
+        ui->Mochi->setPixmap(mochi_green_smile);
+        ui->Mochi->setScaledContents(true);
     }
     ui->Label_WhoWon->setAlignment(Qt::AlignCenter);
 }

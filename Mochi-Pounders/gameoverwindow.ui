@@ -40,7 +40,7 @@
       <x>0</x>
       <y>0</y>
       <width>141</width>
-      <height>201</height>
+      <height>241</height>
      </rect>
     </property>
    </widget>
@@ -50,7 +50,7 @@
       <x>340</x>
       <y>0</y>
       <width>141</width>
-      <height>201</height>
+      <height>241</height>
      </rect>
     </property>
    </widget>
@@ -58,9 +58,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>200</y>
+      <y>234</y>
       <width>491</width>
-      <height>75</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -101,12 +101,26 @@
      <string>TextLabel</string>
     </property>
    </widget>
+   <widget class="QLabel" name="Mochi">
+    <property name="geometry">
+     <rect>
+      <x>165</x>
+      <y>60</y>
+      <width>150</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>Background</zorder>
    <zorder>Label_GameOver</zorder>
    <zorder>ScoreFinal_Red</zorder>
    <zorder>ScoreFinal_Blue</zorder>
    <zorder>button_main_menu</zorder>
    <zorder>Label_WhoWon</zorder>
+   <zorder>Mochi</zorder>
   </widget>
  </widget>
  <resources/>

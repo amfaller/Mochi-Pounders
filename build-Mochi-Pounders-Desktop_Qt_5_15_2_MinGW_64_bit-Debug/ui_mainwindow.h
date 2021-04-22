@@ -53,7 +53,8 @@ public:
         ScoreCounter_Blue->setGeometry(QRect(410, 0, 71, 81));
         TimeCounter = new QLCDNumber(centralwidget);
         TimeCounter->setObjectName(QString::fromUtf8("TimeCounter"));
-        TimeCounter->setGeometry(QRect(190, 0, 100, 81));
+        TimeCounter->setGeometry(QRect(190, 0, 100, 51));
+        TimeCounter->setSegmentStyle(QLCDNumber::Filled);
         PauseButton = new QPushButton(centralwidget);
         PauseButton->setObjectName(QString::fromUtf8("PauseButton"));
         PauseButton->setGeometry(QRect(200, 250, 75, 23));
