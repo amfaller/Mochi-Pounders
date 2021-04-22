@@ -32,6 +32,7 @@ signals:
     void send_scores (int red, int blue);   // Signal to send final scores to game over screen
 
 private slots:
+    void bonk();
     void on_HammerButton_Red_clicked();
     void on_HammerButton_Blue_clicked();
     void update_time();

@@ -70,12 +70,46 @@ MainWindow::~MainWindow()
 // ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Hammer Slots ///////////////////////////////////////////////////////////////////////////////////////
 
+/* Function to bonk mochi */
+void MainWindow::bonk()
+{
+    std::cout << "BONK" << std::endl;
+    // Mochi
+    QPixmap mochi_red_bonked(":/images/Mochi_Red_Bonked.png");
+    QPixmap mochi_blue_bonked(":/images/Mochi_Blue_Bonked.png");
+    QPixmap mochi_green_bonked(":/images/Mochi_Green_Bonked.png");
+    QPixmap mochi_black_bonked(":/images/empty.png");
+
+    switch(currColor){
+    case COLOR_RED:
+        std::cout << " - Setting red bonk" << std::endl;
+        ui->Mochi->setPixmap(mochi_red_bonked);
+        break;
+    case COLOR_BLUE:
+        std::cout << " - Setting blue bonk" << std::endl;
+        ui->Mochi->setPixmap(mochi_blue_bonked);
+        break;
+    case COLOR_GREEN:
+        std::cout << " - Setting green bonk" << std::endl;
+        ui->Mochi->setPixmap(mochi_green_bonked);
+        break;
+    case COLOR_BLACK:
+        ui->Mochi->setPixmap(mochi_black_bonked);
+        break;
+    }
+
+    ui->Mochi->setScaledContents(true);
+}
+
 /* Red Hammer Click Handler*/
 void MainWindow::on_HammerButton_Red_clicked()
 {
     redScore = ui->ScoreCounter_Red->intValue();
 
     if(!isPaused){
+        if(moleNotClicked)
+            bonk();
+
         if(moleNotClicked && currColor == COLOR_RED){
             moleNotClicked = false;
             ui->ScoreCounter_Red->display(++redScore);
@@ -96,7 +130,12 @@ void MainWindow::on_HammerButton_Blue_clicked()
 {
     blueScore = ui->ScoreCounter_Blue->intValue();
 
+
+
     if(!isPaused){
+        if(moleNotClicked)
+            bonk();
+
         /* Same checks as in red click handler */
         if(moleNotClicked && currColor == COLOR_BLUE){
             moleNotClicked = false;
