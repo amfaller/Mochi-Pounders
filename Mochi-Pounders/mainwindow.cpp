@@ -71,34 +71,12 @@ MainWindow::~MainWindow()
 // Hammer Slots ///////////////////////////////////////////////////////////////////////////////////////
 
 /* Function to bonk mochi */
-void MainWindow::bonk()
+void MainWindow::bonk(int isBonked)
 {
     std::cout << "BONK" << std::endl;
-    // Mochi
-    QPixmap mochi_red_bonked(":/images/Mochi_Red_Bonked.png");
-    QPixmap mochi_blue_bonked(":/images/Mochi_Blue_Bonked.png");
-    QPixmap mochi_green_bonked(":/images/Mochi_Green_Bonked.png");
-    QPixmap mochi_black_bonked(":/images/empty.png");
 
-    switch(currColor){
-    case COLOR_RED:
-        std::cout << " - Setting red bonk" << std::endl;
-        ui->Mochi->setPixmap(mochi_red_bonked);
-        break;
-    case COLOR_BLUE:
-        std::cout << " - Setting blue bonk" << std::endl;
-        ui->Mochi->setPixmap(mochi_blue_bonked);
-        break;
-    case COLOR_GREEN:
-        std::cout << " - Setting green bonk" << std::endl;
-        ui->Mochi->setPixmap(mochi_green_bonked);
-        break;
-    case COLOR_BLACK:
-        ui->Mochi->setPixmap(mochi_black_bonked);
-        break;
-    }
-
-    ui->Mochi->setScaledContents(true);
+    this->isBonked = isBonked;
+    update();
 }
 
 /* Red Hammer Click Handler*/
@@ -108,7 +86,7 @@ void MainWindow::on_HammerButton_Red_clicked()
 
     if(!isPaused){
         if(moleNotClicked)
-            bonk();
+            MainWindow::setColorState(9);
 
         if(moleNotClicked && currColor == COLOR_RED){
             moleNotClicked = false;
@@ -130,11 +108,9 @@ void MainWindow::on_HammerButton_Blue_clicked()
 {
     blueScore = ui->ScoreCounter_Blue->intValue();
 
-
-
     if(!isPaused){
         if(moleNotClicked)
-            bonk();
+            MainWindow::setColorState(9);
 
         /* Same checks as in red click handler */
         if(moleNotClicked && currColor == COLOR_BLUE){
@@ -235,7 +211,34 @@ void MainWindow::paintEvent(QPaintEvent *event)
         ui->Mochi->setScaledContents(true);
     }
     else{
-        if(state <= 2)      // 1 or 2
+        if(state == 9){
+
+            if(currColor == COLOR_RED){
+                std::cout << " - Setting red bonk" << std::endl;
+                QPixmap mochi_red_bonked(":/images/Mochi_Red_Bonked.png");
+                ui->Mochi->setPixmap(mochi_red_bonked);
+                ui->Mochi->setScaledContents(true);
+            }
+            else if (currColor == COLOR_BLUE){
+                std::cout << " - Setting blue bonk" << std::endl;
+                QPixmap mochi_blue_bonked(":/images/Mochi_Blue_Bonked.png");
+                ui->Mochi->setPixmap(mochi_blue_bonked);
+                ui->Mochi->setScaledContents(true);
+            }
+
+            else if (currColor == COLOR_GREEN){
+                std::cout << " - Setting green bonk" << std::endl;
+                QPixmap mochi_green_bonked(":/images/Mochi_Green_Bonked.png");
+                ui->Mochi->setPixmap(mochi_green_bonked);
+                ui->Mochi->setScaledContents(true);
+            }
+            else if (currColor == COLOR_BLACK){
+                QPixmap mochi_black_bonked(":/images/empty.png");
+                ui->Mochi->setPixmap(mochi_black_bonked);
+                ui->Mochi->setScaledContents(true);
+            }
+        }
+        else if(state <= 2)      // 1 or 2
         {
             painter.setPen(QPen(Qt::blue));
             painter.setBrush(Qt::blue);

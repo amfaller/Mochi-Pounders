@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[21];
-    char stringdata0[236];
+    QByteArrayData data[22];
+    char stringdata0[245];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,24 +39,26 @@ QT_MOC_LITERAL(3, 27, 11), // "send_scores"
 QT_MOC_LITERAL(4, 39, 3), // "red"
 QT_MOC_LITERAL(5, 43, 4), // "blue"
 QT_MOC_LITERAL(6, 48, 4), // "bonk"
-QT_MOC_LITERAL(7, 53, 27), // "on_HammerButton_Red_clicked"
-QT_MOC_LITERAL(8, 81, 28), // "on_HammerButton_Blue_clicked"
-QT_MOC_LITERAL(9, 110, 11), // "update_time"
-QT_MOC_LITERAL(10, 122, 13), // "setColorState"
-QT_MOC_LITERAL(11, 136, 5), // "state"
-QT_MOC_LITERAL(12, 142, 22), // "on_PauseButton_clicked"
-QT_MOC_LITERAL(13, 165, 6), // "resume"
-QT_MOC_LITERAL(14, 172, 7), // "cleanup"
-QT_MOC_LITERAL(15, 180, 15), // "changeTime_game"
-QT_MOC_LITERAL(16, 196, 4), // "time"
-QT_MOC_LITERAL(17, 201, 5), // "score"
-QT_MOC_LITERAL(18, 207, 9), // "game_over"
-QT_MOC_LITERAL(19, 217, 8), // "redScore"
-QT_MOC_LITERAL(20, 226, 9) // "blueScore"
+QT_MOC_LITERAL(7, 53, 8), // "isBonked"
+QT_MOC_LITERAL(8, 62, 27), // "on_HammerButton_Red_clicked"
+QT_MOC_LITERAL(9, 90, 28), // "on_HammerButton_Blue_clicked"
+QT_MOC_LITERAL(10, 119, 11), // "update_time"
+QT_MOC_LITERAL(11, 131, 13), // "setColorState"
+QT_MOC_LITERAL(12, 145, 5), // "state"
+QT_MOC_LITERAL(13, 151, 22), // "on_PauseButton_clicked"
+QT_MOC_LITERAL(14, 174, 6), // "resume"
+QT_MOC_LITERAL(15, 181, 7), // "cleanup"
+QT_MOC_LITERAL(16, 189, 15), // "changeTime_game"
+QT_MOC_LITERAL(17, 205, 4), // "time"
+QT_MOC_LITERAL(18, 210, 5), // "score"
+QT_MOC_LITERAL(19, 216, 9), // "game_over"
+QT_MOC_LITERAL(20, 226, 8), // "redScore"
+QT_MOC_LITERAL(21, 235, 9) // "blueScore"
 
     },
     "MainWindow\0show_main_menu\0\0send_scores\0"
-    "red\0blue\0bonk\0on_HammerButton_Red_clicked\0"
+    "red\0blue\0bonk\0isBonked\0"
+    "on_HammerButton_Red_clicked\0"
     "on_HammerButton_Blue_clicked\0update_time\0"
     "setColorState\0state\0on_PauseButton_clicked\0"
     "resume\0cleanup\0changeTime_game\0time\0"
@@ -82,32 +84,32 @@ static const uint qt_meta_data_MainWindow[] = {
        3,    2,   75,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,   80,    2, 0x08 /* Private */,
-       7,    0,   81,    2, 0x08 /* Private */,
-       8,    0,   82,    2, 0x08 /* Private */,
-       9,    0,   83,    2, 0x08 /* Private */,
-      10,    1,   84,    2, 0x08 /* Private */,
-      12,    0,   87,    2, 0x08 /* Private */,
-      13,    0,   88,    2, 0x08 /* Private */,
-      14,    0,   89,    2, 0x08 /* Private */,
-      15,    2,   90,    2, 0x08 /* Private */,
-      18,    2,   95,    2, 0x08 /* Private */,
+       6,    1,   80,    2, 0x08 /* Private */,
+       8,    0,   83,    2, 0x08 /* Private */,
+       9,    0,   84,    2, 0x08 /* Private */,
+      10,    0,   85,    2, 0x08 /* Private */,
+      11,    1,   86,    2, 0x08 /* Private */,
+      13,    0,   89,    2, 0x08 /* Private */,
+      14,    0,   90,    2, 0x08 /* Private */,
+      15,    0,   91,    2, 0x08 /* Private */,
+      16,    2,   92,    2, 0x08 /* Private */,
+      19,    2,   97,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    4,    5,
 
  // slots: parameters
+    QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   11,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   12,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   16,   17,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   19,   20,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   17,   18,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   20,   21,
 
        0        // eod
 };
@@ -120,7 +122,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->show_main_menu(); break;
         case 1: _t->send_scores((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 2: _t->bonk(); break;
+        case 2: _t->bonk((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->on_HammerButton_Red_clicked(); break;
         case 4: _t->on_HammerButton_Blue_clicked(); break;
         case 5: _t->update_time(); break;
