@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>100</y>
-      <width>71</width>
-      <height>111</height>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="text">
@@ -30,10 +30,10 @@
    <widget class="QPushButton" name="HammerButton_Blue">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>380</x>
       <y>100</y>
-      <width>71</width>
-      <height>111</height>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="text">

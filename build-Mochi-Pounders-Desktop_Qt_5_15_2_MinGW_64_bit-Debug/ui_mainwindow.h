@@ -41,10 +41,10 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         HammerButton_Red = new QPushButton(centralwidget);
         HammerButton_Red->setObjectName(QString::fromUtf8("HammerButton_Red"));
-        HammerButton_Red->setGeometry(QRect(0, 100, 71, 111));
+        HammerButton_Red->setGeometry(QRect(0, 100, 100, 100));
         HammerButton_Blue = new QPushButton(centralwidget);
         HammerButton_Blue->setObjectName(QString::fromUtf8("HammerButton_Blue"));
-        HammerButton_Blue->setGeometry(QRect(410, 100, 71, 111));
+        HammerButton_Blue->setGeometry(QRect(380, 100, 100, 100));
         ScoreCounter_Red = new QLCDNumber(centralwidget);
         ScoreCounter_Red->setObjectName(QString::fromUtf8("ScoreCounter_Red"));
         ScoreCounter_Red->setGeometry(QRect(0, 0, 71, 81));

@@ -54,6 +54,24 @@ MainWindow::MainWindow(QWidget *parent)
     ui->Background->setPixmap(background);
     ui->Background->setScaledContents(true);
 
+    // Button images
+    QPixmap redButtonPixmap(":/images/Mochi_Red.png");
+    QIcon redButtonIcon(redButtonPixmap);
+    ui->HammerButton_Red->setIcon(redButtonIcon);
+    ui->HammerButton_Red->setIconSize(QSize(100,100));
+    ui->HammerButton_Red->setFixedSize(100,100);
+    ui->HammerButton_Red->setText("");
+    ui->HammerButton_Red->setStyleSheet("QPushButton{background:transparent;}");
+
+    QPixmap blueButtonPixmap(":/images/Mochi_Blue.png");
+    QIcon blueButtonIcon(blueButtonPixmap);
+    ui->HammerButton_Blue->setIcon(blueButtonIcon);
+    ui->HammerButton_Blue->setIconSize(QSize(100,100));
+    ui->HammerButton_Blue->setFixedSize(100,100);
+    ui->HammerButton_Blue->setText("");
+    ui->HammerButton_Blue->setStyleSheet("QPushButton{background:transparent;}");
+
+
     // Game over window
     gow = new class GameOverWindow();
 
