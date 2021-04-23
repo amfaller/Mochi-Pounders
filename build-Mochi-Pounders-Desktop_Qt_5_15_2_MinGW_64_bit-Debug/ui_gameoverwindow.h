@@ -58,7 +58,7 @@ public:
         Label_WhoWon = new QLabel(centralwidget);
         Label_WhoWon->setObjectName(QString::fromUtf8("Label_WhoWon"));
         Label_WhoWon->setEnabled(true);
-        Label_WhoWon->setGeometry(QRect(150, 50, 181, 121));
+        Label_WhoWon->setGeometry(QRect(150, 80, 181, 121));
         QFont font1;
         font1.setPointSize(10);
         Label_WhoWon->setFont(font1);

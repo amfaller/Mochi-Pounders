@@ -46,11 +46,11 @@ public:
         button_back->setGeometry(QRect(0, 200, 75, 75));
         slider_time = new QSlider(centralwidget);
         slider_time->setObjectName(QString::fromUtf8("slider_time"));
-        slider_time->setGeometry(QRect(100, 60, 160, 22));
+        slider_time->setGeometry(QRect(100, 60, 160, 51));
         slider_time->setOrientation(Qt::Horizontal);
         number_time = new QLCDNumber(centralwidget);
         number_time->setObjectName(QString::fromUtf8("number_time"));
-        number_time->setGeometry(QRect(320, 60, 64, 23));
+        number_time->setGeometry(QRect(320, 60, 64, 41));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(160, 20, 181, 41));
@@ -65,10 +65,10 @@ public:
         label_score->setFont(font);
         number_score = new QLCDNumber(centralwidget);
         number_score->setObjectName(QString::fromUtf8("number_score"));
-        number_score->setGeometry(QRect(320, 160, 64, 23));
+        number_score->setGeometry(QRect(320, 160, 64, 41));
         slider_score = new QSlider(centralwidget);
         slider_score->setObjectName(QString::fromUtf8("slider_score"));
-        slider_score->setGeometry(QRect(100, 160, 160, 22));
+        slider_score->setGeometry(QRect(100, 160, 160, 51));
         slider_score->setOrientation(Qt::Horizontal);
         button_defaults = new QPushButton(centralwidget);
         button_defaults->setObjectName(QString::fromUtf8("button_defaults"));
