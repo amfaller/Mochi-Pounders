@@ -57,7 +57,7 @@ public:
         TimeCounter->setSegmentStyle(QLCDNumber::Filled);
         PauseButton = new QPushButton(centralwidget);
         PauseButton->setObjectName(QString::fromUtf8("PauseButton"));
-        PauseButton->setGeometry(QRect(200, 250, 75, 23));
+        PauseButton->setGeometry(QRect(215, 222, 50, 50));
         Mochi = new QLabel(centralwidget);
         Mochi->setObjectName(QString::fromUtf8("Mochi"));
         Mochi->setGeometry(QRect(165, 60, 150, 150));

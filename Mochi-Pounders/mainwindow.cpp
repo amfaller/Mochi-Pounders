@@ -71,6 +71,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->HammerButton_Blue->setText("");
     ui->HammerButton_Blue->setStyleSheet("QPushButton{background:transparent;}");
 
+    QPixmap pauseButtonPixmap(":/images/Pause_Button.png");
+    QIcon pauseButtonIcon(pauseButtonPixmap);
+    ui->PauseButton->setIcon(pauseButtonIcon);
+    ui->PauseButton->setIconSize(QSize(50,50));
+    ui->PauseButton->setFixedSize(50,50);
+    ui->PauseButton->setText("");
+    ui->PauseButton->setStyleSheet("QPushButton{background:transparent;}");
+
 
     // Game over window
     gow = new class GameOverWindow();

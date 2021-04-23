@@ -12,5 +12,6 @@
         <file>Mochi_Blue_Smile.png</file>
         <file>Mochi_Green_Smile.png</file>
         <file>Mochi_Red_Smile.png</file>
+        <file>Pause_Button.png</file>
     </qresource>
 </RCC>

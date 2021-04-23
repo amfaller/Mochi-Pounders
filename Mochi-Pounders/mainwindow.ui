@@ -76,10 +76,10 @@
    <widget class="QPushButton" name="PauseButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>250</y>
-      <width>75</width>
-      <height>23</height>
+      <x>215</x>
+      <y>222</y>
+      <width>50</width>
+      <height>50</height>
      </rect>
     </property>
     <property name="text">
