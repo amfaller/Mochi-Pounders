@@ -35,7 +35,7 @@ public:
         MainMenu->resize(480, 272);
         button_2player = new QPushButton(MainMenu);
         button_2player->setObjectName(QString::fromUtf8("button_2player"));
-        button_2player->setGeometry(QRect(180, 100, 120, 100));
+        button_2player->setGeometry(QRect(140, 100, 200, 100));
         button_settings = new QPushButton(MainMenu);
         button_settings->setObjectName(QString::fromUtf8("button_settings"));
         button_settings->setGeometry(QRect(410, 0, 70, 70));

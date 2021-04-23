@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="button_2player">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>140</x>
      <y>100</y>
-     <width>120</width>
+     <width>200</width>
      <height>100</height>
     </rect>
    </property>

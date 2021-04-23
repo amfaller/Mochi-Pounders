@@ -48,6 +48,14 @@ MainMenu::MainMenu(QWidget *parent) :
     ui->button_exit->setText("");
     ui->button_exit->setStyleSheet("QPushButton{background:transparent;}");
 
+    QPixmap playButtonPixmap(":/images/Play_Icon_Alt.png");
+    QIcon playButtonIcon(playButtonPixmap);
+    ui->button_2player->setIcon(playButtonIcon);
+    ui->button_2player->setIconSize(QSize(200,100));
+    ui->button_2player->setFixedSize(200,100);
+    ui->button_2player->setText("");
+    ui->button_2player->setStyleSheet("QPushButton{background:transparent;}");
+
 
 }
 

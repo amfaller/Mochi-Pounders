@@ -151,8 +151,10 @@ debug/qrc_Resources.cpp: ../Mochi-Pounders/Resources.qrc \
 		../Mochi-Pounders/Settings_Icon_Alt.png \
 		../Mochi-Pounders/Generic_Background.png \
 		../Mochi-Pounders/Mochi_Red_Smile.png \
+		../Mochi-Pounders/Play_Icon.png \
 		../Mochi-Pounders/Mochi_Red_Bonked.png \
 		../Mochi-Pounders/Mochi_Green.png \
+		../Mochi-Pounders/Play_Icon_Alt.png \
 		../Mochi-Pounders/Mochi_Blue_Bonked.png \
 		../Mochi-Pounders/Help_Icon_Alt.png \
 		../Mochi-Pounders/Mochi_Red.png \
