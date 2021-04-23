@@ -140,19 +140,24 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Resources.cpp
 debug/qrc_Resources.cpp: ../Mochi-Pounders/Resources.qrc \
 		D:/Qt/5.15.2/mingw81_64/bin/rcc.exe \
+		../Mochi-Pounders/Exit_Icon.png \
+		../Mochi-Pounders/Mochi_Blue_Smile.png \
 		../Mochi-Pounders/Mochi_Green_Bonked.png \
-		../Mochi-Pounders/Mochi_Blue_Bonked.png \
+		../Mochi-Pounders/Settings_Icon.png \
+		../Mochi-Pounders/Pause_Button.png \
+		../Mochi-Pounders/Help_Icon.png \
+		../Mochi-Pounders/empty.png \
 		../Mochi-Pounders/Gameplay_Background.png \
+		../Mochi-Pounders/Settings_Icon_Alt.png \
 		../Mochi-Pounders/Generic_Background.png \
 		../Mochi-Pounders/Mochi_Red_Smile.png \
-		../Mochi-Pounders/empty.png \
-		../Mochi-Pounders/Mochi_Blue.png \
 		../Mochi-Pounders/Mochi_Red_Bonked.png \
-		../Mochi-Pounders/Mochi_Green_Smile.png \
 		../Mochi-Pounders/Mochi_Green.png \
-		../Mochi-Pounders/Pause_Button.png \
+		../Mochi-Pounders/Mochi_Blue_Bonked.png \
+		../Mochi-Pounders/Help_Icon_Alt.png \
 		../Mochi-Pounders/Mochi_Red.png \
-		../Mochi-Pounders/Mochi_Blue_Smile.png
+		../Mochi-Pounders/Mochi_Green_Smile.png \
+		../Mochi-Pounders/Mochi_Blue.png
 	D:\Qt\5.15.2\mingw81_64\bin\rcc.exe -name Resources ..\Mochi-Pounders\Resources.qrc -o debug\qrc_Resources.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -270,6 +275,8 @@ debug/moc_credits.cpp: ../Mochi-Pounders/credits.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../Mochi-Pounders/mainmenu.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/mainwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
@@ -285,8 +292,6 @@ debug/moc_credits.cpp: ../Mochi-Pounders/credits.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/QBrush \
-		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/pausewindow.h \
 		../Mochi-Pounders/gameoverwindow.h \
 		../Mochi-Pounders/credits.h \
@@ -514,6 +519,8 @@ debug/moc_help.cpp: ../Mochi-Pounders/help.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../Mochi-Pounders/mainmenu.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/mainwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
@@ -529,8 +536,6 @@ debug/moc_help.cpp: ../Mochi-Pounders/help.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/QBrush \
-		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/pausewindow.h \
 		../Mochi-Pounders/gameoverwindow.h \
 		../Mochi-Pounders/credits.h \
@@ -645,6 +650,8 @@ debug/moc_mainmenu.cpp: ../Mochi-Pounders/mainmenu.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/mainwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
@@ -660,8 +667,6 @@ debug/moc_mainmenu.cpp: ../Mochi-Pounders/mainmenu.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/QBrush \
-		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/pausewindow.h \
 		../Mochi-Pounders/gameoverwindow.h \
 		../Mochi-Pounders/credits.h \
@@ -1038,6 +1043,8 @@ debug/moc_settings.cpp: ../Mochi-Pounders/settings.h \
 		../Mochi-Pounders/mainmenu.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/mainwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/QTime \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
@@ -1049,8 +1056,6 @@ debug/moc_settings.cpp: ../Mochi-Pounders/settings.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/QBrush \
-		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/pausewindow.h \
 		../Mochi-Pounders/gameoverwindow.h \
 		../Mochi-Pounders/credits.h \
@@ -1213,6 +1218,8 @@ debug/credits.o: ../Mochi-Pounders/credits.cpp ../Mochi-Pounders/credits.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../Mochi-Pounders/mainmenu.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/mainwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
@@ -1228,8 +1235,6 @@ debug/credits.o: ../Mochi-Pounders/credits.cpp ../Mochi-Pounders/credits.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/QBrush \
-		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/pausewindow.h \
 		../Mochi-Pounders/gameoverwindow.h \
 		../Mochi-Pounders/help.h \
@@ -1490,6 +1495,8 @@ debug/help.o: ../Mochi-Pounders/help.cpp ../Mochi-Pounders/help.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../Mochi-Pounders/mainmenu.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/mainwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
@@ -1505,8 +1512,6 @@ debug/help.o: ../Mochi-Pounders/help.cpp ../Mochi-Pounders/help.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/QBrush \
-		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/pausewindow.h \
 		../Mochi-Pounders/gameoverwindow.h \
 		../Mochi-Pounders/credits.h \
@@ -1774,6 +1779,8 @@ debug/mainmenu.o: ../Mochi-Pounders/mainmenu.cpp ../Mochi-Pounders/mainmenu.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/mainwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
@@ -1789,8 +1796,6 @@ debug/mainmenu.o: ../Mochi-Pounders/mainmenu.cpp ../Mochi-Pounders/mainmenu.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/QBrush \
-		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/pausewindow.h \
 		../Mochi-Pounders/gameoverwindow.h \
 		../Mochi-Pounders/credits.h \
@@ -2210,6 +2215,8 @@ debug/settings.o: ../Mochi-Pounders/settings.cpp ../Mochi-Pounders/settings.h \
 		../Mochi-Pounders/mainmenu.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QDialog \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qdialog.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
+		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/mainwindow.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/QTime \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
@@ -2221,8 +2228,6 @@ debug/settings.o: ../Mochi-Pounders/settings.cpp ../Mochi-Pounders/settings.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtGui/QBrush \
-		D:/Qt/5.15.2/mingw81_64/include/QtGui/QPixmap \
-		D:/Qt/5.15.2/mingw81_64/include/QtCore/QSize \
 		../Mochi-Pounders/pausewindow.h \
 		../Mochi-Pounders/gameoverwindow.h \
 		../Mochi-Pounders/credits.h \

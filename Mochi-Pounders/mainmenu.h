@@ -2,6 +2,8 @@
 #define MAINMENU_H
 
 #include <QDialog>
+#include <QPixmap>
+#include <QSize>
 #include "mainwindow.h"
 #include "credits.h"
 #include "help.h"

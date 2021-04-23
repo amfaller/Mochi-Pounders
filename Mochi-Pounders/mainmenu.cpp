@@ -22,6 +22,33 @@ MainMenu::MainMenu(QWidget *parent) :
     QPixmap background(":/images/Generic_Background.png");
     ui->Background->setPixmap(background);
     ui->Background->setScaledContents(true);
+
+    // Button Images
+    QPixmap helpButtonPixmap(":/images/Help_Icon_Alt.png");
+    QIcon helpButtonIcon(helpButtonPixmap);
+    ui->button_help->setIcon(helpButtonIcon);
+    ui->button_help->setIconSize(QSize(70,70));
+    ui->button_help->setFixedSize(70,70);
+    ui->button_help->setText("");
+    ui->button_help->setStyleSheet("QPushButton{background:transparent;}");
+
+    QPixmap settingsButtonPixmap(":/images/Settings_Icon_Alt.png");
+    QIcon settingsButtonIcon(settingsButtonPixmap);
+    ui->button_settings->setIcon(settingsButtonIcon);
+    ui->button_settings->setIconSize(QSize(70,70));
+    ui->button_settings->setFixedSize(70,70);
+    ui->button_settings->setText("");
+    ui->button_settings->setStyleSheet("QPushButton{background:transparent;}");
+
+    QPixmap exitButtonPixmap(":/images/Exit_Icon.png");
+    QIcon exitButtonIcon(exitButtonPixmap);
+    ui->button_exit->setIcon(exitButtonIcon);
+    ui->button_exit->setIconSize(QSize(40,40));
+    ui->button_exit->setFixedSize(40,40);
+    ui->button_exit->setText("");
+    ui->button_exit->setStyleSheet("QPushButton{background:transparent;}");
+
+
 }
 
 MainMenu::~MainMenu()

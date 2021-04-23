@@ -13,5 +13,10 @@
         <file>Mochi_Green_Smile.png</file>
         <file>Mochi_Red_Smile.png</file>
         <file>Pause_Button.png</file>
+        <file>Help_Icon.png</file>
+        <file>Settings_Icon.png</file>
+        <file>Help_Icon_Alt.png</file>
+        <file>Settings_Icon_Alt.png</file>
+        <file>Exit_Icon.png</file>
     </qresource>
 </RCC>
