@@ -12,6 +12,8 @@ Mochi Pounders mimics Mole Hammers in that it is a two-player versus game. Oppos
 
 This game is implemented using the QT framework and is designed for use on the BeagleBone Black and its accompanying 4.3" TFT LCD display. This is the final project for Boston University's EC535: Introduction to Embedded Systems class.
 
+Custom artwork for the game was developed using https://www.pixilart.com/.
+
 
 ## Sources
 * [Sample QT Walkthrough](https://www.youtube.com/watch?v=I96uPDifZ1w&ab_channel=DerekBanas)
