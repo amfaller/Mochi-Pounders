@@ -14,6 +14,10 @@ This game is implemented using the QT framework and is designed for use on the B
 
 Custom artwork for the game was developed using https://www.pixilart.com/.
 
+## Instructions
+Since Mochi Pounders was created under the QT framework, the QT Creator IDE should be used to modify this code. Load the project using the `.pro` file, and the IDE should show the files organized by file type. 
+
+**Specific to EC535:** To cross compile this project for the BeagleBone Black, copy everything onto the ENG Grid. After sourcing the proper `.bashrc` file, run `qmake` followed by `make` within the `/Mochi-Pounders` directory. This will generate the cross-compiled binary. Copy this binary onto the BeagleBone and run the game with `./Mochi-Pounders`. 
 
 ## Sources
 * [Sample QT Walkthrough](https://www.youtube.com/watch?v=I96uPDifZ1w&ab_channel=DerekBanas)
