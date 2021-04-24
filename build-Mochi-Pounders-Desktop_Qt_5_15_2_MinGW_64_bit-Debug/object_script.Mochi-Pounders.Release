@@ -6,6 +6,7 @@ release/mainmenu.o
 release/mainwindow.o
 release/pausewindow.o
 release/settings.o
+release/qrc_Resources.o
 release/moc_credits.o
 release/moc_gameoverwindow.o
 release/moc_help.o

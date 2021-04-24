@@ -14,9 +14,7 @@
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,8 +28,8 @@ public:
     QLCDNumber *ScoreFinal_Blue;
     QPushButton *button_main_menu;
     QLabel *Label_WhoWon;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QLabel *Background;
+    QLabel *Mochi;
 
     void setupUi(QMainWindow *GameOverWindow)
     {
@@ -42,7 +40,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         Label_GameOver = new QLabel(centralwidget);
         Label_GameOver->setObjectName(QString::fromUtf8("Label_GameOver"));
-        Label_GameOver->setGeometry(QRect(150, -20, 281, 81));
+        Label_GameOver->setGeometry(QRect(0, 0, 480, 50));
         QFont font;
         font.setPointSize(22);
         font.setBold(true);
@@ -50,28 +48,34 @@ public:
         Label_GameOver->setFont(font);
         ScoreFinal_Red = new QLCDNumber(centralwidget);
         ScoreFinal_Red->setObjectName(QString::fromUtf8("ScoreFinal_Red"));
-        ScoreFinal_Red->setGeometry(QRect(0, 0, 141, 181));
+        ScoreFinal_Red->setGeometry(QRect(0, 0, 141, 241));
         ScoreFinal_Blue = new QLCDNumber(centralwidget);
         ScoreFinal_Blue->setObjectName(QString::fromUtf8("ScoreFinal_Blue"));
-        ScoreFinal_Blue->setGeometry(QRect(340, 0, 141, 181));
+        ScoreFinal_Blue->setGeometry(QRect(340, 0, 141, 241));
         button_main_menu = new QPushButton(centralwidget);
         button_main_menu->setObjectName(QString::fromUtf8("button_main_menu"));
-        button_main_menu->setGeometry(QRect(0, 180, 491, 75));
+        button_main_menu->setGeometry(QRect(0, 234, 491, 41));
         Label_WhoWon = new QLabel(centralwidget);
         Label_WhoWon->setObjectName(QString::fromUtf8("Label_WhoWon"));
         Label_WhoWon->setEnabled(true);
-        Label_WhoWon->setGeometry(QRect(150, 50, 181, 121));
+        Label_WhoWon->setGeometry(QRect(150, 80, 181, 121));
         QFont font1;
         font1.setPointSize(10);
         Label_WhoWon->setFont(font1);
+        Background = new QLabel(centralwidget);
+        Background->setObjectName(QString::fromUtf8("Background"));
+        Background->setGeometry(QRect(0, 0, 480, 272));
+        Mochi = new QLabel(centralwidget);
+        Mochi->setObjectName(QString::fromUtf8("Mochi"));
+        Mochi->setGeometry(QRect(165, 60, 150, 150));
         GameOverWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(GameOverWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 480, 21));
-        GameOverWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(GameOverWindow);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        GameOverWindow->setStatusBar(statusbar);
+        Background->raise();
+        Label_GameOver->raise();
+        ScoreFinal_Red->raise();
+        ScoreFinal_Blue->raise();
+        button_main_menu->raise();
+        Label_WhoWon->raise();
+        Mochi->raise();
 
         retranslateUi(GameOverWindow);
 
@@ -81,9 +85,11 @@ public:
     void retranslateUi(QMainWindow *GameOverWindow)
     {
         GameOverWindow->setWindowTitle(QCoreApplication::translate("GameOverWindow", "MainWindow", nullptr));
-        Label_GameOver->setText(QCoreApplication::translate("GameOverWindow", "Game Over!", nullptr));
+        Label_GameOver->setText(QCoreApplication::translate("GameOverWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">Game Over!</span></p></body></html>", nullptr));
         button_main_menu->setText(QCoreApplication::translate("GameOverWindow", "Main Menu", nullptr));
         Label_WhoWon->setText(QCoreApplication::translate("GameOverWindow", "<html><head/><body><p align=\"center\">We're all winners if we have fun :)</p></body></html>", nullptr));
+        Background->setText(QCoreApplication::translate("GameOverWindow", "TextLabel", nullptr));
+        Mochi->setText(QString());
     } // retranslateUi
 
 };

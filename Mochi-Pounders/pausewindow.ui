@@ -39,6 +39,22 @@
     <string>Main Menu</string>
    </property>
   </widget>
+  <widget class="QLabel" name="Background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>272</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>Background</zorder>
+  <zorder>button_resume</zorder>
+  <zorder>button_main_menu</zorder>
  </widget>
  <resources/>
  <connections/>

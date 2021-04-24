@@ -2,6 +2,7 @@
 #define GAMEOVERWINDOW_H
 
 #include <QMainWindow>
+#include <QPixmap>
 
 namespace Ui {
 class GameOverWindow;

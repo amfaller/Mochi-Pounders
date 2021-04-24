@@ -12,10 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,8 +29,8 @@ public:
     QLCDNumber *ScoreCounter_Blue;
     QLCDNumber *TimeCounter;
     QPushButton *PauseButton;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QLabel *Mochi;
+    QLabel *Background;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -42,10 +41,10 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         HammerButton_Red = new QPushButton(centralwidget);
         HammerButton_Red->setObjectName(QString::fromUtf8("HammerButton_Red"));
-        HammerButton_Red->setGeometry(QRect(0, 100, 71, 111));
+        HammerButton_Red->setGeometry(QRect(0, 100, 100, 100));
         HammerButton_Blue = new QPushButton(centralwidget);
         HammerButton_Blue->setObjectName(QString::fromUtf8("HammerButton_Blue"));
-        HammerButton_Blue->setGeometry(QRect(410, 100, 71, 111));
+        HammerButton_Blue->setGeometry(QRect(380, 100, 100, 100));
         ScoreCounter_Red = new QLCDNumber(centralwidget);
         ScoreCounter_Red->setObjectName(QString::fromUtf8("ScoreCounter_Red"));
         ScoreCounter_Red->setGeometry(QRect(0, 0, 71, 81));
@@ -54,18 +53,26 @@ public:
         ScoreCounter_Blue->setGeometry(QRect(410, 0, 71, 81));
         TimeCounter = new QLCDNumber(centralwidget);
         TimeCounter->setObjectName(QString::fromUtf8("TimeCounter"));
-        TimeCounter->setGeometry(QRect(210, 0, 71, 81));
+        TimeCounter->setGeometry(QRect(190, 0, 100, 51));
+        TimeCounter->setSegmentStyle(QLCDNumber::Filled);
         PauseButton = new QPushButton(centralwidget);
         PauseButton->setObjectName(QString::fromUtf8("PauseButton"));
-        PauseButton->setGeometry(QRect(200, 210, 75, 23));
+        PauseButton->setGeometry(QRect(215, 222, 50, 50));
+        Mochi = new QLabel(centralwidget);
+        Mochi->setObjectName(QString::fromUtf8("Mochi"));
+        Mochi->setGeometry(QRect(165, 60, 150, 150));
+        Background = new QLabel(centralwidget);
+        Background->setObjectName(QString::fromUtf8("Background"));
+        Background->setGeometry(QRect(0, 0, 480, 272));
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 480, 21));
-        MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        MainWindow->setStatusBar(statusbar);
+        Background->raise();
+        HammerButton_Red->raise();
+        HammerButton_Blue->raise();
+        ScoreCounter_Red->raise();
+        ScoreCounter_Blue->raise();
+        TimeCounter->raise();
+        PauseButton->raise();
+        Mochi->raise();
 
         retranslateUi(MainWindow);
 
@@ -78,6 +85,8 @@ public:
         HammerButton_Red->setText(QCoreApplication::translate("MainWindow", "Red", nullptr));
         HammerButton_Blue->setText(QCoreApplication::translate("MainWindow", "Blue", nullptr));
         PauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
+        Mochi->setText(QString());
+        Background->setText(QString());
     } // retranslateUi
 
 };

@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>100</y>
-      <width>71</width>
-      <height>111</height>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="text">
@@ -30,10 +30,10 @@
    <widget class="QPushButton" name="HammerButton_Blue">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>380</x>
       <y>100</y>
-      <width>71</width>
-      <height>111</height>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
     <property name="text">
@@ -63,38 +63,64 @@
    <widget class="QLCDNumber" name="TimeCounter">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>190</x>
       <y>0</y>
-      <width>71</width>
-      <height>81</height>
+      <width>100</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="segmentStyle">
+     <enum>QLCDNumber::Filled</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="PauseButton">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>210</y>
-      <width>75</width>
-      <height>23</height>
+      <x>215</x>
+      <y>222</y>
+      <width>50</width>
+      <height>50</height>
      </rect>
     </property>
     <property name="text">
      <string>Pause</string>
     </property>
    </widget>
+   <widget class="QLabel" name="Mochi">
+    <property name="geometry">
+     <rect>
+      <x>165</x>
+      <y>60</y>
+      <width>150</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Background">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>272</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>Background</zorder>
+   <zorder>HammerButton_Red</zorder>
+   <zorder>HammerButton_Blue</zorder>
+   <zorder>ScoreCounter_Red</zorder>
+   <zorder>ScoreCounter_Blue</zorder>
+   <zorder>TimeCounter</zorder>
+   <zorder>PauseButton</zorder>
+   <zorder>Mochi</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>480</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

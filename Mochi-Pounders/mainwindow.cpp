@@ -49,6 +49,37 @@ MainWindow::MainWindow(QWidget *parent)
     gameTimer->start(tick);
     ui->TimeCounter->display(countdownTime);
 
+    // Background
+    QPixmap background(":/images/Gameplay_Background.png");
+    ui->Background->setPixmap(background);
+    ui->Background->setScaledContents(true);
+
+    // Button images
+    QPixmap redButtonPixmap(":/images/Mochi_Red.png");
+    QIcon redButtonIcon(redButtonPixmap);
+    ui->HammerButton_Red->setIcon(redButtonIcon);
+    ui->HammerButton_Red->setIconSize(QSize(100,100));
+    ui->HammerButton_Red->setFixedSize(100,100);
+    ui->HammerButton_Red->setText("");
+    ui->HammerButton_Red->setStyleSheet("QPushButton{background:transparent;}");
+
+    QPixmap blueButtonPixmap(":/images/Mochi_Blue.png");
+    QIcon blueButtonIcon(blueButtonPixmap);
+    ui->HammerButton_Blue->setIcon(blueButtonIcon);
+    ui->HammerButton_Blue->setIconSize(QSize(100,100));
+    ui->HammerButton_Blue->setFixedSize(100,100);
+    ui->HammerButton_Blue->setText("");
+    ui->HammerButton_Blue->setStyleSheet("QPushButton{background:transparent;}");
+
+    QPixmap pauseButtonPixmap(":/images/Pause_Button.png");
+    QIcon pauseButtonIcon(pauseButtonPixmap);
+    ui->PauseButton->setIcon(pauseButtonIcon);
+    ui->PauseButton->setIconSize(QSize(50,50));
+    ui->PauseButton->setFixedSize(50,50);
+    ui->PauseButton->setText("");
+    ui->PauseButton->setStyleSheet("QPushButton{background:transparent;}");
+
+
     // Game over window
     gow = new class GameOverWindow();
 
@@ -71,6 +102,9 @@ void MainWindow::on_HammerButton_Red_clicked()
     redScore = ui->ScoreCounter_Red->intValue();
 
     if(!isPaused){
+        if(moleNotClicked)
+            MainWindow::setColorState(9);
+
         if(moleNotClicked && currColor == COLOR_RED){
             moleNotClicked = false;
             ui->ScoreCounter_Red->display(++redScore);
@@ -92,6 +126,9 @@ void MainWindow::on_HammerButton_Blue_clicked()
     blueScore = ui->ScoreCounter_Blue->intValue();
 
     if(!isPaused){
+        if(moleNotClicked)
+            MainWindow::setColorState(9);
+
         /* Same checks as in red click handler */
         if(moleNotClicked && currColor == COLOR_BLUE){
             moleNotClicked = false;
@@ -119,7 +156,7 @@ void MainWindow::update_time()
         // Update timer
         ui->TimeCounter->display(countdownTime--);
 
-        if(countdownTime == 0){
+        if(countdownTime == -1){
             isPregame = false;
             isPaused = false;
         }
@@ -184,31 +221,82 @@ void MainWindow::paintEvent(QPaintEvent *event)
         painter.setPen(QPen(Qt::black));
         painter.setBrush(Qt::black);
         currColor = COLOR_BLACK;
+
+        // Mochi
+        QPixmap mochi_black(":/images/empty.png");
+        ui->Mochi->setPixmap(mochi_black);
+        ui->Mochi->setScaledContents(true);
     }
     else{
-        if(state <= 2)      // 1 or 2
+        if(state == 9){     // Bonk condition
+            if(currColor == COLOR_RED){
+//                std::cout << " - Setting red bonk" << std::endl;
+                QPixmap mochi_red_bonked(":/images/Mochi_Red_Bonked.png");
+                ui->Mochi->setPixmap(mochi_red_bonked);
+                ui->Mochi->setScaledContents(true);
+            }
+            else if (currColor == COLOR_BLUE){
+//                std::cout << " - Setting blue bonk" << std::endl;
+                QPixmap mochi_blue_bonked(":/images/Mochi_Blue_Bonked.png");
+                ui->Mochi->setPixmap(mochi_blue_bonked);
+                ui->Mochi->setScaledContents(true);
+            }
+
+            else if (currColor == COLOR_GREEN){
+//                std::cout << " - Setting green bonk" << std::endl;
+                QPixmap mochi_green_bonked(":/images/Mochi_Green_Bonked.png");
+                ui->Mochi->setPixmap(mochi_green_bonked);
+                ui->Mochi->setScaledContents(true);
+            }
+            else if (currColor == COLOR_BLACK){
+                QPixmap mochi_black_bonked(":/images/empty.png");
+                ui->Mochi->setPixmap(mochi_black_bonked);
+                ui->Mochi->setScaledContents(true);
+            }
+        }
+        else if(state <= 2)      // 1 or 2
         {
             painter.setPen(QPen(Qt::blue));
             painter.setBrush(Qt::blue);
             currColor = COLOR_BLUE;
+
+            // Mochi
+            QPixmap mochi_blue(":/images/Mochi_Blue.png");
+            ui->Mochi->setPixmap(mochi_blue);
+            ui->Mochi->setScaledContents(true);
         }
         else if( state < 5) // 3 or 4
         {
             painter.setPen(QPen(Qt::red));
             painter.setBrush(Qt::red);
             currColor = COLOR_RED;
+
+            // Mochi
+            QPixmap mochi_red(":/images/Mochi_Red.png");
+            ui->Mochi->setPixmap(mochi_red);
+            ui->Mochi->setScaledContents(true);
         }
         else if(state == 5) // 5
         {
             painter.setPen(QPen(Qt::green));
             painter.setBrush(Qt::green);
             currColor = COLOR_GREEN;
+
+            // Mochi
+            QPixmap mochi_green(":/images/Mochi_Green.png");
+            ui->Mochi->setPixmap(mochi_green);
+            ui->Mochi->setScaledContents(true);
         }
         else                // 6 7 or 8
         {
             painter.setPen(QPen(Qt::black));
             painter.setBrush(Qt::black);
             currColor = COLOR_BLACK;
+
+            // Mochi
+            QPixmap mochi_black(":/images/empty.png");
+            ui->Mochi->setPixmap(mochi_black);
+            ui->Mochi->setScaledContents(true);
         }
     }
 
@@ -240,7 +328,7 @@ void MainWindow::on_PauseButton_clicked()
     QObject::connect(&pauseWindow, SIGNAL(cleanup()), this, SLOT(cleanup()));
 
     if(is_first_pause){
-        std::cout << "The first pause" << std::endl;
+//        std::cout << "The first pause" << std::endl;
         is_first_pause = false;
 
         // Show the pause window
@@ -248,7 +336,7 @@ void MainWindow::on_PauseButton_clicked()
         pauseWindow.exec();
     }
     else{
-        std::cout << "Not the first pause" << std::endl;
+//        std::cout << "Not the first pause" << std::endl;
         pauseWindow.show();
     }
 }
@@ -266,7 +354,7 @@ void MainWindow::resume()
 /* Slot to clean up the game window when user has exited to main menu*/
 void MainWindow::cleanup()
 {
-    std::cout << "Cleanup signal received, handling..." << std::endl;
+//    std::cout << "Cleanup signal received, handling..." << std::endl;
 
     // Fully destruct the game window & its children
     this->~MainWindow();

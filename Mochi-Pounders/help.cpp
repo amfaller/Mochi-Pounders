@@ -6,6 +6,9 @@ help::help(QWidget *parent) :
     ui(new Ui::help)
 {
     ui->setupUi(this);
+
+    // Background
+    ui->help_text->setStyleSheet("background-image:url(:/images/Generic_Background.png);");
 }
 
 help::~help()

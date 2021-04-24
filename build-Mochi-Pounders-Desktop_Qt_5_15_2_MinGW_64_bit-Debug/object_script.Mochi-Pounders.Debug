@@ -6,6 +6,7 @@ debug/mainmenu.o
 debug/mainwindow.o
 debug/pausewindow.o
 debug/settings.o
+debug/qrc_Resources.o
 debug/moc_credits.o
 debug/moc_gameoverwindow.o
 debug/moc_help.o

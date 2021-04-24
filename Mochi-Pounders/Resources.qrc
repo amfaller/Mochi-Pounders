@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Mochi_Blue.png</file>
+        <file>Mochi_Green.png</file>
+        <file>Mochi_Red.png</file>
+        <file>Gameplay_Background.png</file>
+        <file>empty.png</file>
+        <file>Mochi_Blue_Bonked.png</file>
+        <file>Mochi_Green_Bonked.png</file>
+        <file>Mochi_Red_Bonked.png</file>
+        <file>Generic_Background.png</file>
+        <file>Mochi_Blue_Smile.png</file>
+        <file>Mochi_Green_Smile.png</file>
+        <file>Mochi_Red_Smile.png</file>
+        <file>Pause_Button.png</file>
+        <file>Help_Icon.png</file>
+        <file>Settings_Icon.png</file>
+        <file>Help_Icon_Alt.png</file>
+        <file>Settings_Icon_Alt.png</file>
+        <file>Exit_Icon.png</file>
+        <file>Play_Icon.png</file>
+        <file>Play_Icon_Alt.png</file>
+    </qresource>
+</RCC>

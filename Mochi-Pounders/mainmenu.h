@@ -2,6 +2,8 @@
 #define MAINMENU_H
 
 #include <QDialog>
+#include <QPixmap>
+#include <QSize>
 #include "mainwindow.h"
 #include "credits.h"
 #include "help.h"
@@ -33,6 +35,8 @@ private slots:
     void on_button_help_clicked();
     void on_button_settings_clicked();
     void grab_time_from_settings(int value, int score, int exit);
+
+    void on_button_exit_clicked();
 
 private:
     Ui::MainMenu *ui;

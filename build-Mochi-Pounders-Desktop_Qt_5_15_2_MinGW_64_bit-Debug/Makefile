@@ -252,7 +252,8 @@ Makefile: ../Mochi-Pounders/Mochi-Pounders.pro D:/Qt/5.15.2/mingw81_64/mkspecs/w
 		D:/Qt/5.15.2/mingw81_64/lib/Qt5Gui.prl \
 		D:/Qt/5.15.2/mingw81_64/lib/Qt5Core.prl \
 		D:/Qt/5.15.2/mingw81_64/lib/qtmain.prl \
-		D:/Qt/5.15.2/mingw81_64/mkspecs/features/build_pass.prf
+		D:/Qt/5.15.2/mingw81_64/mkspecs/features/build_pass.prf \
+		../Mochi-Pounders/Resources.qrc
 	$(QMAKE) -o Makefile ..\Mochi-Pounders\Mochi-Pounders.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 D:/Qt/5.15.2/mingw81_64/mkspecs/features/spec_pre.prf:
 D:/Qt/5.15.2/mingw81_64/mkspecs/qdevice.pri:
@@ -437,6 +438,7 @@ D:/Qt/5.15.2/mingw81_64/lib/Qt5Gui.prl:
 D:/Qt/5.15.2/mingw81_64/lib/Qt5Core.prl:
 D:/Qt/5.15.2/mingw81_64/lib/qtmain.prl:
 D:/Qt/5.15.2/mingw81_64/mkspecs/features/build_pass.prf:
+../Mochi-Pounders/Resources.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Mochi-Pounders\Mochi-Pounders.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
