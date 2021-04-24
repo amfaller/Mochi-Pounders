@@ -3,7 +3,7 @@ Author: Tony Faller (amfaller@bu.edu)
 
 Start date: April 13, 2021
 
-End date: TBD
+End date: April 27, 2021
 
 ## Summary
 Mochi Pounders is an open-source variant of the classic game Whack-A-Mole. It is loosely based on the old browser-based game [Mole Hammers](https://www.miniplay.com/game/mole-hammers), which sadly is no longer playable on many browsers. It is recommended to view [Markiplier's videos on YouTube](https://www.youtube.com/watch?v=_hHIMMtUNGc&ab_channel=Markiplier) for a gameplay demo.
